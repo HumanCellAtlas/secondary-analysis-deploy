@@ -1,0 +1,12 @@
+export SS2_SUBSCRIPTION_ID="placeholder_ss2_subscription_id"
+export SS2_VERSION="smartseq2_v2.1.0"
+
+export TENX_SUBSCRIPTION_ID="placeholder_10x_subscription_id"
+export TENX_VERSION="cellranger_v1.0.2"
+
+export GCLOUD_PROJECT="broad-dsde-mint-${LIRA_ENVIRONMENT}"
+
+export DSS_URL="https://dss.integration.data.humancellatlas.org/v1"
+export SCHEMA_URL="http://schema.integration.data.humancellatlas.org/"
+export INGEST_URL="http://api.ingest.integration.data.humancellatlas.org/"
+export DOMAIN="pipelines.dev.data.humancellatlas.org"
