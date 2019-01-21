@@ -1,17 +1,17 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-    name: {{ env "DEPLOYMENT_NAME" }}
+    name: {{ env "LIRA_DEPLOYMENT_NAME" }}
 spec:
-    replicas: {{ env "NUMBER_OF_REPLICAS" }}
+    replicas: {{ env "LIRA_NUMBER_OF_REPLICAS" }}
     template:
         metadata:
             labels:
-                app: {{ env "APPLICATION_NAME" }}
+                app: {{ env "LIRA_APPLICATION_NAME" }}
 
         spec:
             containers:
-            - name: {{ env "CONTAINER_NAME" }}
+            - name: {{ env "LIRA_CONTAINER_NAME" }}
               image: {{env "LIRA_DOCKER_IMAGE"}}
               imagePullPolicy: Always
               ports:
