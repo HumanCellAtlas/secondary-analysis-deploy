@@ -27,10 +27,10 @@ spec:
                     readOnly: true
 
               env:
-                  - name: falcon_config
+                  - name: CONFIG_PATH
                     value: /etc/falcon/config.json
                   {{ if (env "USE_CAAS") | parseBool }}
-                  - name: caas_key
+                  - name: CAAS_KEY
                     value: /etc/falcon/caas_key.json
                   {{ end }}
 
