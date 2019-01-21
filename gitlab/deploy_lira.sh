@@ -30,7 +30,7 @@ gcloud container clusters get-credentials "${KUBERNETES_CLUSTER}" \
 
 # KUBERNETES SERVICE DEPLOYMENT
 
-echo "Generating service file"
+echo "Generating Lira service file"
 sh "${DEPLOY_DIR}/render-ctmpls.sh" -k "${CONFIG_DIR}/lira-service.yaml.ctmpl"
 
 echo "Deploying Lira Service"

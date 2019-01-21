@@ -42,8 +42,8 @@ gcloud container clusters get-credentials "${KUBERNETES_CLUSTER}" \
 # KUBERNETES SERVICE DEPLOYMENT
 
 echo "Generating service file"
-docker run -i --rm -e APPLICATION_NAME="${APPLICATION_NAME}" \
-                   -e SERVICE_NAME="${SERVICE_NAME}" \
+docker run -i --rm -e LIRA_APPLICATION_NAME="${LIRA_APPLICATION_NAME}" \
+                   -e LIRA_SERVICE_NAME="${LIRA_SERVICE_NAME}" \
                    -v "${VAULT_READ_TOKEN_PATH}":/root/.vault-token \
                    -v "${PWD}":/working \
                    broadinstitute/dsde-toolbox:ra_rendering \
@@ -89,9 +89,9 @@ kubectl create secret tls \
 
 echo "Generating ingress file"
 docker run -i --rm -e TLS_SECRET_NAME="${TLS_SECRET_NAME}" \
-                   -e GLOBAL_IP_NAME="${GLOBAL_IP_NAME}" \
-                   -e INGRESS_NAME="${INGRESS_NAME}" \
-                   -e SERVICE_NAME="${SERVICE_NAME}" \
+                   -e LIRA_GLOBAL_IP_NAME="${LIRA_GLOBAL_IP_NAME}" \
+                   -e LIRA_INGRESS_NAME="${LIRA_INGRESS_NAME}" \
+                   -e LIRA_SERVICE_NAME="${LIRA_SERVICE_NAME}" \
                    -v "${VAULT_READ_TOKEN_PATH}":/root/.vault-token \
                    -v "${PWD}":/working \
                    --privileged \
@@ -158,10 +158,10 @@ fi
 
 echo "Generating Lira deployment file"
 docker run -i --rm -e LIRA_CONFIG_SECRET_NAME="${LIRA_CONFIG_SECRET_NAME}" \
-                   -e DEPLOYMENT_NAME="${DEPLOYMENT_NAME}" \
-                   -e NUMBER_OF_REPLICAS="${NUMBER_OF_REPLICAS}" \
-                   -e APPLICATION_NAME="${APPLICATION_NAME}" \
-                   -e CONTAINER_NAME="${CONTAINER_NAME}" \
+                   -e LIRA_DEPLOYMENT_NAME="${LIRA_DEPLOYMENT_NAME}" \
+                   -e LIRA_NUMBER_OF_REPLICAS="${LIRA_NUMBER_OF_REPLICAS}" \
+                   -e LIRA_APPLICATION_NAME="${LIRA_APPLICATION_NAME}" \
+                   -e LIRA_CONTAINER_NAME="${LIRA_CONTAINER_NAME}" \
                    -e LIRA_DOCKER_IMAGE="${LIRA_DOCKER_IMAGE}" \
                    -e USE_CAAS="${USE_CAAS}" \
                    -e SUBMIT_AND_HOLD="${SUBMIT_AND_HOLD}" \

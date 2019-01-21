@@ -6,7 +6,7 @@ stages:
   - staging
   - prod
 
-deploy_dev:
+deploy_lira_dev:
   tags:
     - green
   stage: dev
@@ -14,7 +14,15 @@ deploy_dev:
     - export LIRA_ENVIRONMENT=dev
     - bash gitlab/deploy_lira.sh
 
-deploy_test:
+deploy_falcon_dev:
+  tags:
+    - green
+  stage: dev
+  script:
+    - export LIRA_ENVIRONMENT=dev
+    - bash gitlab/deploy_falcon.sh
+
+deploy_lira_test:
   tags:
     - green
   stage: test
@@ -23,7 +31,16 @@ deploy_test:
     - bash gitlab/deploy_lira.sh
   when: manual
 
-deploy_staging:
+deploy_falcon_test:
+  tags:
+    - green
+  stage: test
+  script:
+    - export LIRA_ENVIRONMENT=test
+    - bash gitlab/deploy_falcon.sh
+  when: manual
+
+deploy_lira_staging:
   tags:
     - green
   stage: staging
@@ -32,11 +49,29 @@ deploy_staging:
     - bash gitlab/deploy_lira.sh
   when: manual
 
-deploy_lira:
+deploy_falcon_staging:
+  tags:
+    - green
+  stage: staging
+  script:
+    - export LIRA_ENVIRONMENT=staging
+    - bash gitlab/deploy_falcon.sh
+  when: manual
+
+deploy_lira_prod:
   tags:
     - green
   stage: prod
   script:
     - export LIRA_ENVIRONMENT=prod
     - bash gitlab/deploy_lira.sh
+  when: manual
+
+deploy_falcon_prod:
+  tags:
+    - green
+  stage: prod
+  script:
+    - export LIRA_ENVIRONMENT=prod
+    - bash gitlab/deploy_falcon.sh
   when: manual

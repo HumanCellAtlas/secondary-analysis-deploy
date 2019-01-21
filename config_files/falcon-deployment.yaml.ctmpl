@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: {{ env "FALCON_DEPLOYMENT_NAME" }}
+    labels:
+        app: falcon
+spec:
+    replicas: {{ env "FALCON_NUMBER_OF_REPLICAS" }}
+    revisionHistoryLimit: 1
+    selector:
+        matchLabels:
+            app: falcon
+    template:
+        metadata:
+            labels:
+                app: {{ env "FALCON_APPLICATION_NAME" }}
+
+        spec:
+            containers:
+            - name: {{ env "FALCON_CONTAINER_NAME" }}
+              image: {{env "FALCON_DOCKER_IMAGE"}}
+              imagePullPolicy: Always
+
+              volumeMounts:
+                  - name: falcon-config
+                    mountPath: /etc/falcon
+                    readOnly: true
+
+              env:
+                  - name: falcon_config
+                    value: /etc/falcon/config.json
+                  {{ if (env "USE_CAAS") | parseBool }}
+                  - name: caas_key
+                    value: /etc/falcon/caas_key.json
+                  {{ end }}
+
+            terminationGracePeriodSeconds: 0
+            volumes:
+                - name: falcon-config
+                  secret:
+                      secretName: {{env "FALCON_CONFIG_SECRET_NAME"}}
+                      items:
+                          - key: config
+                            path: config.json
+                          {{ if (env "USE_CAAS") | parseBool }}
+                          - key: caas_key
+                            path: caas_key.json
+                          {{ end }}
