@@ -4,6 +4,7 @@
 {
     "cromwell_url": "{{env "CROMWELL_URL"}}",
 {{ if env "USE_CAAS" | parseBool }}
+    "use_caas": true,
     "collection_name": "{{ env "COLLECTION_NAME" }}",
 {{ else }}
 {{ with $cromwellSecrets := vault (printf "secret/dsde/mint/%s/common/htpasswd" $ENVIRONMENT) }}
