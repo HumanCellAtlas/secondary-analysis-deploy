@@ -33,22 +33,22 @@ echo "Rendering falcon config file"
 sh "${DEPLOY_DIR}/render-ctmpls.sh" -k "${CONFIG_DIR}/${FALCON_CONFIG_FILE}.ctmpl"
 
 echo "Deploying falcon config file"
-#if [ "${USE_CAAS}" == "true" ];
-#then
-#    kubectl create secret generic "${FALCON_CONFIG_SECRET_NAME}" \
-#            --from-file=config="${CONFIG_DIR}/${FALCON_CONFIG_FILE}" \
-#            --from-file=caas_key="${CONFIG_DIR}/${CAAS_KEY_FILE}" \
-#            --namespace "${KUBERNETES_NAMESPACE}"
-#else
-#    kubectl create secret generic ${FALCON_CONFIG_SECRET_NAME} \
-#            --from-file=config="${CONFIG_DIR}/${FALCON_CONFIG_FILE}" \
-#            --namespace "${KUBERNETES_NAMESPACE}"
-#fi
+if [ "${USE_CAAS}" == "true" ];
+then
+    kubectl create secret generic "${FALCON_CONFIG_SECRET_NAME}" \
+            --from-file=config="${CONFIG_DIR}/${FALCON_CONFIG_FILE}" \
+            --from-file=caas_key="${CONFIG_DIR}/${CAAS_KEY_FILE}" \
+            --namespace "${KUBERNETES_NAMESPACE}"
+else
+    kubectl create secret generic ${FALCON_CONFIG_SECRET_NAME} \
+            --from-file=config="${CONFIG_DIR}/${FALCON_CONFIG_FILE}" \
+            --namespace "${KUBERNETES_NAMESPACE}"
+fi
 
 echo "Generating Falcon deployment file"
 sh "${DEPLOY_DIR}/render-ctmpls.sh" -k "${CONFIG_DIR}/${FALCON_DEPLOYMENT_YAML}.ctmpl"
 
 echo "Deploying Falcon"
-#kubectl apply -f "${CONFIG_DIR}/${FALCON_DEPLOYMENT_YAML}" \
-#              --record \
-#              --namespace "${KUBERNETES_NAMESPACE}"
+kubectl apply -f "${CONFIG_DIR}/${FALCON_DEPLOYMENT_YAML}" \
+              --record \
+              --namespace "${KUBERNETES_NAMESPACE}"
