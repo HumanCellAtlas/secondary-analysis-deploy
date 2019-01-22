@@ -11,8 +11,8 @@
     "cromwell_user": "{{$cromwellSecrets.Data.cromwell_user}}",
 {{ end }}
 {{ end }}
-    "queue_update_interval": "{{ env "QUEUE_UPDATE_INTERVAL" }}",
-    "workflow_start_interval": "{{ env "WORKFLOW_START_INTERVAL" }}"
+    "queue_update_interval": "{{ env "FALCON_QUEUE_UPDATE_INTERVAL" }}",
+    "workflow_start_interval": "{{ env "FALCON_WORKFLOW_START_INTERVAL" }}"
 }
 {{end}}
 {{end}}
