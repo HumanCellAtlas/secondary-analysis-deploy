@@ -153,6 +153,8 @@
     export FALCON_CONFIG_SECRET_NAME="falcon-config-$(date '+%Y-%m-%d-%H-%M-%S')"
     export FALCON_DEPLOYMENT_YAML="falcon-deployment.yaml"
     export FALCON_DOCKER_IMAGE="quay.io/humancellatlas/secondary-analysis-falcon:${FALCON_VERSION}"
+    export FALCON_QUEUE_UPDATE_INTERVAL="60"
+    export FALCON_WORKFLOW_START_INTERVAL="3"
 
     # Pipeline tools
     export PIPELINE_TOOLS_PREFIX="https://raw.githubusercontent.com/HumanCellAtlas/pipeline-tools/${PIPELINE_TOOLS_VERSION}"
