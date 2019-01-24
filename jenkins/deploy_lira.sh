@@ -15,7 +15,7 @@ echo "Rendering deployment configuration file"
 docker run -i --rm \
                -v "${VAULT_READ_TOKEN_PATH}":/root/.vault-token \
                -v "${PWD}":/working \
-               -e LIRA_ENVIRONMENT="${LIRA_ENVIRONMENT}" \
+               -e ENVIRONMENT="${ENVIRONMENT}" \
                --privileged \
                broadinstitute/dsde-toolbox:ra_rendering \
                /usr/local/bin/render-ctmpls.sh \
@@ -63,7 +63,7 @@ then
 fi
 
 echo "Rendering TLS cert"
-docker run -i --rm -e LIRA_ENVIRONMENT="${LIRA_ENVIRONMENT}" \
+docker run -i --rm -e ENVIRONMENT="${ENVIRONMENT}" \
                    -v "${VAULT_READ_TOKEN_PATH}":/root/.vault-token:ro \
                    -v "${PWD}":/working \
                    --privileged \
@@ -72,7 +72,7 @@ docker run -i --rm -e LIRA_ENVIRONMENT="${LIRA_ENVIRONMENT}" \
                    -k "${DOCKER_CONFIG_DIR}/${TLS_FULL_CHAIN_DIR}".ctmpl
 
 echo "Rendering TLS key file"
-docker run -i --rm -e LIRA_ENVIRONMENT="${LIRA_ENVIRONMENT}" \
+docker run -i --rm -e ENVIRONMENT="${ENVIRONMENT}" \
                    -v "${VAULT_READ_TOKEN_PATH}":/root/.vault-token:ro \
                    -v "${PWD}":/working \
                    --privileged \
@@ -108,7 +108,7 @@ kubectl apply -f ${CONFIG_DIR}/lira-ingress.yaml \
 
 echo "Rendering lira config file"
 docker run -i --rm \
-              -e LIRA_ENVIRONMENT="${LIRA_ENVIRONMENT}" \
+              -e ENVIRONMENT="${ENVIRONMENT}" \
               -e CROMWELL_URL="${CROMWELL_URL}" \
               -e USE_CAAS="${USE_CAAS}" \
               -e SUBMIT_AND_HOLD="${SUBMIT_AND_HOLD}" \

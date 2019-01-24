@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+export SS2_SUBSCRIPTION_ID="placeholder_ss2_subscription_id"
+export TENX_SUBSCRIPTION_ID="placeholder_10x_subscription_id"
+
+export GCLOUD_PROJECT="broad-dsde-mint-dev"
+
+export DSS_URL="https://dss.integration.data.humancellatlas.org/v1"
+export SCHEMA_URL="http://schema.integration.data.humancellatlas.org/"
+export INGEST_URL="http://api.ingest.integration.data.humancellatlas.org/"
+export DOMAIN="pipelines.dev.data.humancellatlas.org"
+
+export COLLECTION_NAME="lira-${ENVIRONMENT}"
+
+export CAAS_KEY_PATH="secret/dsde/mint/${ENVIRONMENT}/${LIRA_APPLICATION_NAME}/${CAAS_KEY_FILE}"

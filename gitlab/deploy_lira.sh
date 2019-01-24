@@ -15,6 +15,7 @@ echo "Rendering deployment configuration file"
 sh "${DEPLOY_DIR}/render-ctmpls.sh" -k "${CONFIG_DIR}/config.sh.ctmpl"
 
 # Import the variables from the config files
+source "${CONFIG_DIR}/${ENVIRONMENT}.sh"
 source "${CONFIG_DIR}/config.sh"
 
 echo "Retrieving caas service account key"
