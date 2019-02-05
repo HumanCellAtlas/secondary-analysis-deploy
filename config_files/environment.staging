@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+export SS2_SUBSCRIPTION_ID="c8ea7133-01bf-461c-8db8-88582c500c4a"
+export TENX_SUBSCRIPTION_ID="ade4286a-3a84-4507-bfaf-fc5b1cac40df"
+
+export GCLOUD_PROJECT="broad-dsde-mint-staging"
+
+export DSS_URL="https://dss.staging.data.humancellatlas.org/v1"
+export SCHEMA_URL="https://schema.staging.data.humancellatlas.org/"
+export INGEST_URL="https://api.ingest.staging.data.humancellatlas.org/"
+export DOMAIN="pipelines.staging.data.humancellatlas.org"

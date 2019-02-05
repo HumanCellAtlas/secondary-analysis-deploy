@@ -1,17 +1,24 @@
 #!/usr/bin/env bash
 
+# Source the environment specific variables
+source "${CONFIG_DIR}/environment.${ENVIRONMENT}"
+
 # Dynamic Variables
 export GENERATE_CERTS="false"
 
-export PIPELINE_TOOLS_VERSION="v0.43.0"
+export PIPELINE_TOOLS_VERSION="v0.46.0"
 
-export LIRA_VERSION="v0.14.1"
+export LIRA_VERSION="v0.17.0"
 
 export FALCON_VERSION="v0.1.4"
 
-export SS2_VERSION="smartseq2_v2.1.0"
+export SS2_VERSION="smartseq2_v2.2.0"
 
 export TENX_VERSION="cellranger_v1.0.2"
+
+export COLLECTION_NAME="lira-${ENVIRONMENT}"
+
+export CAAS_KEY_PATH="secret/dsde/mint/${ENVIRONMENT}/${LIRA_APPLICATION_NAME}/${CAAS_KEY_FILE}"
 
 
 # Cromwell Variables
