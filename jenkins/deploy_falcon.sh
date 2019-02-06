@@ -5,10 +5,10 @@ export ENVIRONMENT=${BRANCH}
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/google-cloud-sdk/bin
 
 export VAULT_READ_TOKEN_PATH="/etc/vault-token-mint-read"
-export VAULT_TOKEN="$(cat ${VAULT_READ_TOKEN_PATH})"
 
 export WORK_DIR=$(pwd)
 export CONFIG_DIR=${WORK_DIR}/config_files
+export DOCKER_CONFIG_DIR=/working/config_files
 export DEPLOY_DIR=${WORK_DIR}/gitlab
 export SCRIPTS_DIR=${WORK_DIR}/scripts
 

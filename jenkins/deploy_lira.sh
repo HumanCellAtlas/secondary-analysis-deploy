@@ -44,13 +44,14 @@ gcloud container clusters get-credentials "${KUBERNETES_CLUSTER}" \
 # KUBERNETES SERVICE DEPLOYMENT
 
 echo "Generating service file"
-docker run -i --rm -e LIRA_APPLICATION_NAME="${LIRA_APPLICATION_NAME}" \
-                   -e LIRA_SERVICE_NAME="${LIRA_SERVICE_NAME}" \
-                   -v "${VAULT_READ_TOKEN_PATH}":/root/.vault-token \
-                   -v "${PWD}":/working \
-                   broadinstitute/dsde-toolbox:ra_rendering \
-                   /usr/local/bin/render-ctmpls.sh \
-                   -k "${DOCKER_CONFIG_DIR}/lira-service.yaml.ctmpl"
+docker run -i --rm \
+              -e LIRA_APPLICATION_NAME="${LIRA_APPLICATION_NAME}" \
+              -e LIRA_SERVICE_NAME="${LIRA_SERVICE_NAME}" \
+              -v "${VAULT_READ_TOKEN_PATH}":/root/.vault-token \
+              -v "${PWD}":/working \
+              broadinstitute/dsde-toolbox:ra_rendering \
+              /usr/local/bin/render-ctmpls.sh \
+              -k "${DOCKER_CONFIG_DIR}/lira-service.yaml.ctmpl"
 
 echo "Deploying Lira Service"
 kubectl apply -f ${CONFIG_DIR}/lira-service.yaml \
