@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+export SS2_SUBSCRIPTION_ID="af513bdb-075c-442b-bf01-5634ee9682a2"
+export TENX_SUBSCRIPTION_ID="3d1b6af2-53ff-41b7-a2ef-d1386ff6b93a"
+
+export GCLOUD_PROJECT="broad-dsde-mint-integration"
+
+export DSS_URL="https://dss.integration.data.humancellatlas.org/v1"
+export SCHEMA_URL="https://schema.integration.data.humancellatlas.org/"
+export INGEST_URL="https://api.ingest.integration.data.humancellatlas.org/"
+export DOMAIN="pipelines.integration.data.humancellatlas.org"

@@ -1,4 +1,4 @@
-{{with $ENVIRONMENT := env "LIRA_ENVIRONMENT"}}
+{{with $ENVIRONMENT := env "ENVIRONMENT"}}
 {{with $liraSecret := vault (printf "secret/dsde/mint/%s/lira/lira_secret" $ENVIRONMENT)}}
 {{with $hmac_keys := vault (printf "secret/dsde/mint/%s/lira/hmac_keys" $ENVIRONMENT)}}
 {

@@ -11,7 +11,7 @@ deploy_lira_dev:
     - green
   stage: dev
   script:
-    - export LIRA_ENVIRONMENT=dev
+    - export ENVIRONMENT=dev
     - bash gitlab/deploy_lira.sh
 
 deploy_falcon_dev:
@@ -19,7 +19,7 @@ deploy_falcon_dev:
     - green
   stage: dev
   script:
-    - export LIRA_ENVIRONMENT=dev
+    - export ENVIRONMENT=dev
     - bash gitlab/deploy_falcon.sh
 
 deploy_lira_test:
@@ -27,7 +27,7 @@ deploy_lira_test:
     - green
   stage: test
   script:
-    - export LIRA_ENVIRONMENT=test
+    - export ENVIRONMENT=test
     - bash gitlab/deploy_lira.sh
   when: manual
 
@@ -36,7 +36,7 @@ deploy_falcon_test:
     - green
   stage: test
   script:
-    - export LIRA_ENVIRONMENT=test
+    - export ENVIRONMENT=test
     - bash gitlab/deploy_falcon.sh
   when: manual
 
@@ -45,7 +45,7 @@ deploy_lira_staging:
     - green
   stage: staging
   script:
-    - export LIRA_ENVIRONMENT=staging
+    - export ENVIRONMENT=staging
     - bash gitlab/deploy_lira.sh
   when: manual
 
@@ -54,7 +54,7 @@ deploy_falcon_staging:
     - green
   stage: staging
   script:
-    - export LIRA_ENVIRONMENT=staging
+    - export ENVIRONMENT=staging
     - bash gitlab/deploy_falcon.sh
   when: manual
 
@@ -63,7 +63,7 @@ deploy_lira_prod:
     - green
   stage: prod
   script:
-    - export LIRA_ENVIRONMENT=prod
+    - export ENVIRONMENT=prod
     - bash gitlab/deploy_lira.sh
   when: manual
 
@@ -72,6 +72,6 @@ deploy_falcon_prod:
     - green
   stage: prod
   script:
-    - export LIRA_ENVIRONMENT=prod
+    - export ENVIRONMENT=prod
     - bash gitlab/deploy_falcon.sh
   when: manual

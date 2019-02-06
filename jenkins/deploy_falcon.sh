@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 
+export ENVIRONMENT=${BRANCH}
+
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/google-cloud-sdk/bin
 
-export VAULT_READ_TOKEN_PATH="/gitlab-runner/vault-token-mint-read"
-export VAULT_TOKEN="$(cat ${VAULT_READ_TOKEN_PATH})"
+export VAULT_READ_TOKEN_PATH="/etc/vault-token-mint-read"
 
 export WORK_DIR=$(pwd)
 export CONFIG_DIR=${WORK_DIR}/config_files
+export DOCKER_CONFIG_DIR=/working/config_files
 export DEPLOY_DIR=${WORK_DIR}/gitlab
 export SCRIPTS_DIR=${WORK_DIR}/scripts
 
@@ -14,7 +16,7 @@ echo "Rendering deployment configuration file"
 docker run -i --rm \
                -v "${VAULT_READ_TOKEN_PATH}":/root/.vault-token \
                -v "${PWD}":/working \
-               -e LIRA_ENVIRONMENT="${LIRA_ENVIRONMENT}" \
+               -e ENVIRONMENT="${ENVIRONMENT}" \
                --privileged \
                broadinstitute/dsde-toolbox:ra_rendering \
                /usr/local/bin/render-ctmpls.sh \
@@ -42,7 +44,7 @@ gcloud container clusters get-credentials "${KUBERNETES_CLUSTER}" \
 
 echo "Rendering falcon config file"
 docker run -i --rm \
-              -e LIRA_ENVIRONMENT="${LIRA_ENVIRONMENT}" \
+              -e ENVIRONMENT="${ENVIRONMENT}" \
               -e CROMWELL_URL="${CROMWELL_URL}" \
               -e USE_CAAS="${USE_CAAS}" \
               -e COLLECTION_NAME="${COLLECTION_NAME}" \

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+export ENVIRONMENT=${BRANCH}
+
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/google-cloud-sdk/bin
 
 export VAULT_READ_TOKEN_PATH="/etc/vault-token-mint-read"
@@ -15,7 +17,7 @@ echo "Rendering deployment configuration file"
 docker run -i --rm \
                -v "${VAULT_READ_TOKEN_PATH}":/root/.vault-token \
                -v "${PWD}":/working \
-               -e LIRA_ENVIRONMENT="${LIRA_ENVIRONMENT}" \
+               -e ENVIRONMENT="${ENVIRONMENT}" \
                --privileged \
                broadinstitute/dsde-toolbox:ra_rendering \
                /usr/local/bin/render-ctmpls.sh \
@@ -42,13 +44,14 @@ gcloud container clusters get-credentials "${KUBERNETES_CLUSTER}" \
 # KUBERNETES SERVICE DEPLOYMENT
 
 echo "Generating service file"
-docker run -i --rm -e LIRA_APPLICATION_NAME="${LIRA_APPLICATION_NAME}" \
-                   -e LIRA_SERVICE_NAME="${LIRA_SERVICE_NAME}" \
-                   -v "${VAULT_READ_TOKEN_PATH}":/root/.vault-token \
-                   -v "${PWD}":/working \
-                   broadinstitute/dsde-toolbox:ra_rendering \
-                   /usr/local/bin/render-ctmpls.sh \
-                   -k "${DOCKER_CONFIG_DIR}/lira-service.yaml.ctmpl"
+docker run -i --rm \
+              -e LIRA_APPLICATION_NAME="${LIRA_APPLICATION_NAME}" \
+              -e LIRA_SERVICE_NAME="${LIRA_SERVICE_NAME}" \
+              -v "${VAULT_READ_TOKEN_PATH}":/root/.vault-token \
+              -v "${PWD}":/working \
+              broadinstitute/dsde-toolbox:ra_rendering \
+              /usr/local/bin/render-ctmpls.sh \
+              -k "${DOCKER_CONFIG_DIR}/lira-service.yaml.ctmpl"
 
 echo "Deploying Lira Service"
 kubectl apply -f ${CONFIG_DIR}/lira-service.yaml \
@@ -63,7 +66,7 @@ then
 fi
 
 echo "Rendering TLS cert"
-docker run -i --rm -e LIRA_ENVIRONMENT="${LIRA_ENVIRONMENT}" \
+docker run -i --rm -e ENVIRONMENT="${ENVIRONMENT}" \
                    -v "${VAULT_READ_TOKEN_PATH}":/root/.vault-token:ro \
                    -v "${PWD}":/working \
                    --privileged \
@@ -72,7 +75,7 @@ docker run -i --rm -e LIRA_ENVIRONMENT="${LIRA_ENVIRONMENT}" \
                    -k "${DOCKER_CONFIG_DIR}/${TLS_FULL_CHAIN_DIR}".ctmpl
 
 echo "Rendering TLS key file"
-docker run -i --rm -e LIRA_ENVIRONMENT="${LIRA_ENVIRONMENT}" \
+docker run -i --rm -e ENVIRONMENT="${ENVIRONMENT}" \
                    -v "${VAULT_READ_TOKEN_PATH}":/root/.vault-token:ro \
                    -v "${PWD}":/working \
                    --privileged \
@@ -108,7 +111,7 @@ kubectl apply -f ${CONFIG_DIR}/lira-ingress.yaml \
 
 echo "Rendering lira config file"
 docker run -i --rm \
-              -e LIRA_ENVIRONMENT="${LIRA_ENVIRONMENT}" \
+              -e ENVIRONMENT="${ENVIRONMENT}" \
               -e CROMWELL_URL="${CROMWELL_URL}" \
               -e USE_CAAS="${USE_CAAS}" \
               -e SUBMIT_AND_HOLD="${SUBMIT_AND_HOLD}" \

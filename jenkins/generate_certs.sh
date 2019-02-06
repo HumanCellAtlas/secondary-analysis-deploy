@@ -6,13 +6,13 @@ AWS_ACCESS_KEY_ID="$(docker run -i \
                                 -v "${VAULT_READ_TOKEN_PATH}":/root/.vault-token \
                                 -v "${PWD}":/working \
                                 broadinstitute/dsde-toolbox:ra_rendering \
-                                vault read -field='aws_access_key' secret/dsde/mint/${LIRA_ENVIRONMENT}/lira/aws_cert_user)"
+                                vault read -field='aws_access_key' secret/dsde/mint/${ENVIRONMENT}/lira/aws_cert_user)"
 AWS_SECRET_ACCESS_KEY="$(docker run -i \
                                     --rm \
                                     -v "${VAULT_READ_TOKEN_PATH}":/root/.vault-token \
                                     -v "${PWD}":/working \
                                     broadinstitute/dsde-toolbox:ra_rendering \
-                                    vault read -field='aws_secret_key' secret/dsde/mint/${LIRA_ENVIRONMENT}/lira/aws_cert_user)"
+                                    vault read -field='aws_secret_key' secret/dsde/mint/${ENVIRONMENT}/lira/aws_cert_user)"
 
 echo "Making the temp directory for certs"
 mkdir certs
@@ -50,7 +50,7 @@ then
                -v "${VAULT_WRITE_TOKEN_PATH}":/root/.vault-token \
                -v "${PWD}":/working \
                broadinstitute/dsde-toolbox:ra_rendering \
-               vault write "secret/dsde/mint/${LIRA_ENVIRONMENT}/lira/fullchain.pem" value=@"${FULLCHAIN_VAULT_DIR}"
+               vault write "secret/dsde/mint/${ENVIRONMENT}/lira/fullchain.pem" value=@"${FULLCHAIN_VAULT_DIR}"
 else
     echo "Fullchain file doesn't exist. Skipping..."
 fi
@@ -64,7 +64,7 @@ then
                -v "${VAULT_WRITE_TOKEN_PATH}":/root/.vault-token \
                -v "${PWD}":/working \
                broadinstitute/dsde-toolbox:ra_rendering \
-               vault write "secret/dsde/mint/${LIRA_ENVIRONMENT}/lira/privkey.pem" value=@"${PRIVKEY_VAULT_DIR}"
+               vault write "secret/dsde/mint/${ENVIRONMENT}/lira/privkey.pem" value=@"${PRIVKEY_VAULT_DIR}"
 else
     echo "Private key file doesn't exist. Skipping..."
 fi
@@ -78,7 +78,7 @@ then
                -v "${VAULT_WRITE_TOKEN_PATH}":/root/.vault-token \
                -v "${PWD}":/working \
                broadinstitute/dsde-toolbox:ra_rendering \
-               vault write "secret/dsde/mint/${LIRA_ENVIRONMENT}/lira/chain.pem" value=@"${CHAIN_VAULT_DIR}"
+               vault write "secret/dsde/mint/${ENVIRONMENT}/lira/chain.pem" value=@"${CHAIN_VAULT_DIR}"
 else
     echo "Chain file doesn't exist. Skipping..."
 fi
@@ -92,7 +92,7 @@ then
                -v "${VAULT_WRITE_TOKEN_PATH}":/root/.vault-token \
                -v "${PWD}":/working \
                broadinstitute/dsde-toolbox:ra_rendering \
-               vault write "secret/dsde/mint/${LIRA_ENVIRONMENT}/lira/cert.pem" value=@"${CERT_VAULT_DIR}"
+               vault write "secret/dsde/mint/${ENVIRONMENT}/lira/cert.pem" value=@"${CERT_VAULT_DIR}"
 else
     echo "Cert file doesn't exist. Skipping..."
 fi
