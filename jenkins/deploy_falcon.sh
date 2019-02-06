@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
+export ENVIRONMENT=${BRANCH}
+
 export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/google-cloud-sdk/bin
 
-export VAULT_READ_TOKEN_PATH="/gitlab-runner/vault-token-mint-read"
+export VAULT_READ_TOKEN_PATH="/etc/vault-token-mint-read"
 export VAULT_TOKEN="$(cat ${VAULT_READ_TOKEN_PATH})"
 
 export WORK_DIR=$(pwd)
