@@ -20,8 +20,6 @@ export TENX_VERSION="cellranger_v1.0.2"
 
 export COLLECTION_NAME="lira-${ENVIRONMENT}"
 
-export CAAS_KEY_PATH="secret/dsde/mint/${ENVIRONMENT}/${LIRA_APPLICATION_NAME}/${CAAS_KEY_FILE}"
-
 
 # Static Variables
 
@@ -61,6 +59,7 @@ export USE_HMAC=true
 export SUBMIT_WDL_DIR=""
 export SUBMIT_AND_HOLD=true
 
+export CAAS_KEY_PATH="secret/dsde/mint/${ENVIRONMENT}/${LIRA_APPLICATION_NAME}/${CAAS_KEY_FILE}"
 
 # Falcon Variables
 
