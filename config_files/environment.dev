@@ -6,6 +6,6 @@ export TENX_SUBSCRIPTION_ID="placeholder_10x_subscription_id"
 export GCLOUD_PROJECT="broad-dsde-mint-dev"
 
 export DSS_URL="https://dss.integration.data.humancellatlas.org/v1"
-export SCHEMA_URL="http://schema.integration.data.humancellatlas.org/"
-export INGEST_URL="http://api.ingest.integration.data.humancellatlas.org/"
+export SCHEMA_URL="https://schema.integration.data.humancellatlas.org/"
+export INGEST_URL="https://api.ingest.integration.data.humancellatlas.org/"
 export DOMAIN="pipelines.dev.data.humancellatlas.org"
