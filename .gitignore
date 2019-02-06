@@ -1,0 +1,8 @@
+*.pyc
+*.crt
+*.key
+*.bak
+*key.json
+*.yaml
+config_files/config.sh
+*config.json
