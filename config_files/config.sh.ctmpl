@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
 
 # Source the environment specific variables
+
 source "${CONFIG_DIR}/environment.${ENVIRONMENT}"
 
 # Dynamic Variables
+
 export GENERATE_CERTS="false"
 
 export PIPELINE_TOOLS_VERSION="v0.46.0"
@@ -21,7 +23,10 @@ export COLLECTION_NAME="lira-${ENVIRONMENT}"
 export CAAS_KEY_PATH="secret/dsde/mint/${ENVIRONMENT}/${LIRA_APPLICATION_NAME}/${CAAS_KEY_FILE}"
 
 
+# Static Variables
+
 # Cromwell Variables
+
 export USE_CAAS=true
 export MAX_CROMWELL_RETRIES=1
 export CAAS_ENVIRONMENT="caas-prod"
@@ -31,12 +36,14 @@ export CAAS_KEY_FILE="${CAAS_ENVIRONMENT}-key.json"
 
 
 # Kuberenetes Variables
+
 export KUBERNETES_CLUSTER="green-100-us-central1"
 export KUBERNETES_NAMESPACE="green-100-us-central1-ns"
 export KUBERNETES_ZONE="us-central1-a"
 
 
 # Lira Variables
+
 export LIRA_NUMBER_OF_REPLICAS="3"
 export LIRA_APPLICATION_NAME="lira"
 export LIRA_DEPLOYMENT_NAME="lira"
@@ -56,6 +63,7 @@ export SUBMIT_AND_HOLD=true
 
 
 # Falcon Variables
+
 export FALCON_NUMBER_OF_REPLICAS="1"
 export FALCON_APPLICATION_NAME="falcon"
 export FALCON_DEPLOYMENT_NAME="falcon"
@@ -69,6 +77,7 @@ export FALCON_WORKFLOW_START_INTERVAL="3"
 
 
 # Pipeline tools
+
 export PIPELINE_TOOLS_PREFIX="https://raw.githubusercontent.com/HumanCellAtlas/pipeline-tools/${PIPELINE_TOOLS_VERSION}"
 
 if [ -n "${SUBMIT_WDL_DIR}" ];
@@ -86,6 +95,7 @@ export TLS_SECRET_NAME="hca-tls-secret"-$(date '+%Y-%m-%d-%H-%M-%S')
 
 
 # Smart Seq 2 Variables
+
 export SS2_PREFIX="https://raw.githubusercontent.com/HumanCellAtlas/skylab/${SS2_VERSION}"
 export SS2_ANALYSIS_WDLS="[
                 \"${SS2_PREFIX}/pipelines/smartseq2_single_sample/SmartSeq2SingleSample.wdl\",
@@ -102,6 +112,7 @@ export SS2_WORKFLOW_NAME="AdapterSmartSeq2SingleCell"
 
 
 # TenX Variables
+
 export TENX_PREFIX="https://raw.githubusercontent.com/HumanCellAtlas/skylab/${TENX_VERSION}"
 export TENX_ANALYSIS_WDLS="[
                 \"${TENX_PREFIX}/pipelines/cellranger/cellranger.wdl\"
