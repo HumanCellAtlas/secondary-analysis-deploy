@@ -6,7 +6,7 @@ source "${CONFIG_DIR}/environment.${ENVIRONMENT}"
 
 # Dynamic Variables
 
-export GENERATE_CERTS="false"
+export GENERATE_CERTS="true"
 
 export PIPELINE_TOOLS_VERSION="v0.46.0"
 
