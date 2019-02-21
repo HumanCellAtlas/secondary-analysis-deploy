@@ -50,7 +50,6 @@ docker run -i --rm \
               -e COLLECTION_NAME="${COLLECTION_NAME}" \
               -e FALCON_QUEUE_UPDATE_INTERVAL="${FALCON_QUEUE_UPDATE_INTERVAL}" \
               -e FALCON_WORKFLOW_START_INTERVAL="${FALCON_WORKFLOW_START_INTERVAL}" \
-              -e SUBMIT_AND_HOLD="${SUBMIT_AND_HOLD}" \
               -v "${VAULT_READ_TOKEN_PATH}":/root/.vault-token \
               -v "${PWD}":/working \
               --privileged \
@@ -78,7 +77,6 @@ docker run -i --rm \
               -e FALCON_APPLICATION_NAME="${FALCON_APPLICATION_NAME}" \
               -e FALCON_CONTAINER_NAME="${FALCON_CONTAINER_NAME}" \
               -e FALCON_DOCKER_IMAGE="${FALCON_DOCKER_IMAGE}" \
-              -e FALCON_WORKFLOW_START_INTERVAL="${FALCON_WORKFLOW_START_INTERVAL}" \
               -e USE_CAAS="${USE_CAAS}" \
               -e FALCON_CONFIG_SECRET_NAME="${FALCON_CONFIG_SECRET_NAME}" \
               -v "${VAULT_READ_TOKEN_PATH}":/root/.vault-token \
