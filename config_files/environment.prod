@@ -5,7 +5,7 @@ export TENX_SUBSCRIPTION_ID="afc5eeba-8a3d-4ce7-8905-4ae314f8e210"
 
 export GCLOUD_PROJECT="hca-dcp-pipelines-prod"
 
-export DSS_URL="https://dss.staging.data.humancellatlas.org/v1"
-export SCHEMA_URL="https://schema.staging.data.humancellatlas.org/"
-export INGEST_URL="https://api.ingest.staging.data.humancellatlas.org/"
-export DOMAIN="pipelines.staging.data.humancellatlas.org"
+export DSS_URL="https://dss.data.humancellatlas.org/v1"
+export SCHEMA_URL="https://schema.data.humancellatlas.org/"
+export INGEST_URL="https://api.ingest.data.humancellatlas.org/"
+export DOMAIN="pipelines.data.humancellatlas.org"
