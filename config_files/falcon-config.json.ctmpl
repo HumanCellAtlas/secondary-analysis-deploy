@@ -1,6 +1,4 @@
 {{with $ENVIRONMENT := env "ENVIRONMENT"}}
-{{with $liraSecret := vault (printf "secret/dsde/mint/%s/lira/lira_secret" $ENVIRONMENT)}}
-{{with $hmac_keys := vault (printf "secret/dsde/mint/%s/lira/hmac_keys" $ENVIRONMENT)}}
 {
     "cromwell_url": "{{env "CROMWELL_URL"}}",
 {{ if env "USE_CAAS" | parseBool }}
@@ -15,6 +13,4 @@
     "queue_update_interval": "{{ env "FALCON_QUEUE_UPDATE_INTERVAL" }}",
     "workflow_start_interval": "{{ env "FALCON_WORKFLOW_START_INTERVAL" }}"
 }
-{{end}}
-{{end}}
 {{end}}
