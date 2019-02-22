@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+export GENERATE_CERTS="false"
+
 export SS2_SUBSCRIPTION_ID="placeholder_ss2_subscription_id"
 export TENX_SUBSCRIPTION_ID="placeholder_10x_subscription_id"
 
