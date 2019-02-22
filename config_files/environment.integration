@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+export GENERATE_CERTS="false"
+
 export SS2_SUBSCRIPTION_ID="af513bdb-075c-442b-bf01-5634ee9682a2"
 export TENX_SUBSCRIPTION_ID="3d1b6af2-53ff-41b7-a2ef-d1386ff6b93a"
 
