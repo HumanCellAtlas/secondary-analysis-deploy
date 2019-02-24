@@ -6,8 +6,6 @@
 # I also needed to change the way that the domain was derived from the certbot_domain variable since alpine linux
 # is a subset of bash not full bash. Using the redirect did not work
 
-set -ex
-
 MYSELF="$(cd "$(dirname "$0")" && pwd)/$(basename "$0")"
 
 # Check that certbot domain exists. If not, then create letsencrypt directory and make the cert challenge
