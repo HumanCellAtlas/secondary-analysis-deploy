@@ -6,7 +6,6 @@ metadata:
     kubernetes.io/ingress.global-static-ip-name: {{ env "LIRA_GLOBAL_IP_NAME" }}
     kubernetes.io/ingress.class: "gce"
     kubernetes.io/ingress.allow-http: "false"
-    ingress.kubernetes.io/force-ssl-redirect
 spec:
   tls:
     - secretName: {{ env "TLS_SECRET_NAME" }}
