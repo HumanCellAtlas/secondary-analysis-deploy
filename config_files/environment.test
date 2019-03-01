@@ -14,7 +14,7 @@ export TENX_VERSION="cellranger_v1.0.2"
 
 export COLLECTION_NAME="lira-${ENVIRONMENT}"
 
-export GENERATE_CERTS="true"
+export GENERATE_CERTS="false"
 
 export SS2_SUBSCRIPTION_ID="af513bdb-075c-442b-bf01-5634ee9682a2"
 export TENX_SUBSCRIPTION_ID="28d3551d-b30f-473e-8e3b-6459f32a309b"
