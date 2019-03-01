@@ -75,3 +75,4 @@ deploy_falcon_prod:
     - export ENVIRONMENT=prod
     - bash gitlab/deploy_falcon.sh
   when: manual
+  
