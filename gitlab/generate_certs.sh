@@ -62,4 +62,4 @@ fi
 export VAULT_TOKEN="$(cat ${VAULT_READ_TOKEN_PATH})"
 
 echo "Removing local copies of certs"
-rm -rf certs
+#rm -rf certs
