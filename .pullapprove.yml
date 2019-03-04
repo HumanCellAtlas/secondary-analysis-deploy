@@ -4,9 +4,11 @@ groups:
   pullapprove-admins:
     conditions:
     - "'.pullapprove.yml' in files"
+
     reviews:
-      required: 2
+      required: 1
       author_value: 1 # if author in group reduce number of approvals needed by this number
+
     reviewers:
       users:
       - rhiananthony
@@ -15,9 +17,10 @@ groups:
 
   code-review:
     reviews:
-      required: 2
+      required: 1
       author_value: 1 # if author in group reduce number of approvals needed by this number
       request_order: shuffle  # reviewers will be chosen in a random order
+
     reviewers:
       users:
       - rhiananthony
