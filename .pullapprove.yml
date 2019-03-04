@@ -1,46 +1,22 @@
-version: 2
-
-group_defaults:
-
-  always_pending:
-    labels:
-      - do-not-merge
-      - needs-rebase
-      - needs-review
-      - work-in-progress
-
-  approve_by_comment:
-    enabled: true
-    approve_regex: '^([A|a]pproved|[T|t]ested|:thumbsup:)'
-    reject_regex: '^([R|r]ejected|:thumbsdown:)'
-
-  reject_value: -100 # any rejection means a failure
-
-  reset_on_reopened:
-    enabled: true
+version: 3
 
 groups:
   pullapprove-admins:
-    approve_by_comment:
-      approve_regex: ^Approved
-      enabled: true
-      reject_regex: ^Rejected
-    author_approval:
-          ignored: true
     conditions:
-      files:
-        - ".pullapprove.yml"
-    required: 1
-    users:
-      - rhiananthony
+      - "'.pullapprove.yml' in files"
+    reviews:
+      required: 1
+    reviewers:
+      users:
+        - rhiananthony
+      teams:
+        - secops
 
-#  code-review:
-#    approve_by_comment:
-#      approve_regex: ^Approved
-#      enabled: true
-#      reject_regex: ^Rejected
-#    required: 1
-#    reset_on_push:
-#      enabled: false
-#    users:
-#    - rhiananthony
+  code-review:
+    reviews:
+      required: 1
+    reviewers:
+      users:
+        - rhiananthony
+      teams:
+        - pipelines-team
