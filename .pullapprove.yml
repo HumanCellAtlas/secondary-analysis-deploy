@@ -1,34 +1,22 @@
 version: 3
 
-group_defaults:
-
-  always_pending:
-    labels:
-      - do-not-merge
-      - needs-rebase
-      - needs-review
-      - work-in-progress
-
-  reject_value: -100 # any rejection means a failure
-
-  reset_on_reopened:
-    enabled: true
-
 groups:
   pullapprove-admins:
     conditions:
       - "'.pullapprove.yml' in files"
-    required: 1
-    users:
-      - rhiananthony
-    teams:
-      - secops
+    reviews:
+      required: 1
+    reviewers:
+      users:
+        - rhiananthony
+      teams:
+        - secops
 
   code-review:
-    required: 1
-    reset_on_push:
-      enabled: false
-    users:
-      - rhiananthony
-    teams:
-      - pipelines-team
+    reviews:
+      required: 1
+    reviewers:
+      users:
+        - rhiananthony
+      teams:
+        - pipelines-team
