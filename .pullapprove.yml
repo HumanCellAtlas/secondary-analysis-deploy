@@ -15,17 +15,25 @@ groups:
       teams:
       - secops
 
-  code-review:
+  software-review:
     reviews:
       required: 2
       author_value: 1 # if author in group reduce number of approvals needed by this number
-      request_order: shuffle  # reviewers will be chosen in a random order
+      request_order: random  # reviewers will be chosen in a random order
 
     reviewers:
-      users:
-      - rhiananthony
       teams:
-      - pipelines-team
+      - pipelines-software-engineers
+
+#  computational-review:
+#    reviews:
+#      required: 1
+#      author_value: 0 # if author in group reduce number of approvals needed by this number
+#      request_order: random  # reviewers will be chosen in a random order
+#
+#    reviewers:
+#      teams:
+#      - pipelines-computational-biologists
 
 #notifications:
 #- when: pullapprove.approved
