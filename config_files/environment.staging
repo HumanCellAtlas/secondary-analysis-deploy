@@ -4,7 +4,7 @@
 
 export PIPELINE_TOOLS_VERSION="v0.46.1"
 
-export LIRA_VERSION="v0.17.0"
+export LIRA_VERSION="v0.18.1"
 
 export FALCON_VERSION="v0.1.4"
 
@@ -17,7 +17,7 @@ export COLLECTION_NAME="lira-${ENVIRONMENT}"
 export GENERATE_CERTS="false"
 
 export SS2_SUBSCRIPTION_ID="c8ea7133-01bf-461c-8db8-88582c500c4a"
-export TENX_SUBSCRIPTION_ID="ade4286a-3a84-4507-bfaf-fc5b1cac40df"
+export TENX_SUBSCRIPTION_ID="da706539-6635-48a9-b955-81ed2223c0e0"
 
 export GCLOUD_PROJECT="broad-dsde-mint-staging"
 
