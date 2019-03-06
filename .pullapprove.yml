@@ -17,7 +17,7 @@ groups:
 
   code-review:
     reviews:
-      required: 1
+      required: 2
       author_value: 1 # if author in group reduce number of approvals needed by this number
       request_order: shuffle  # reviewers will be chosen in a random order
 
