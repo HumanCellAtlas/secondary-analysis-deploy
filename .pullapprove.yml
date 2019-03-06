@@ -24,6 +24,7 @@ groups:
     reviewers:
       teams:
       - pipelines-software-engineers
+      - pipelines-devops
 
 #  computational-review:
 #    reviews:
