@@ -103,3 +103,17 @@ export TENX_OPTIONS_LINK="${PIPELINE_TOOLS_PREFIX}/adapter_pipelines/cellranger/
 export TENX_WDL_STATIC_INPUTS_LINK="${PIPELINE_TOOLS_PREFIX}/adapter_pipelines/cellranger/adapter_example_static.json"
 export TENX_WDL_LINK="${PIPELINE_TOOLS_PREFIX}/adapter_pipelines/cellranger/adapter.wdl"
 export TENX_WORKFLOW_NAME="Adapter10xCount"
+
+# Manage Subscription Variables
+
+export BLUEBOX_SUBSCRIPTION_KEY="bluebox-subscription-manager-${ENVIRONMENT}-key.json"
+export BLUEBOX_SUBSCRIPTION_PATH="secret/dsde/mint/${ENVIRONMENT}/lira/${BLUEBOX_SUBSCRIPTION_KEY}"
+export BLUEBOX_IAM_ACCOUNT="bluebox-subscription-manager@${GCLOUD_PROJECT}.iam.gserviceaccount.com"
+export BLUEBOX_KEY_PATH=${PWD}/${BLUEBOX_SUBSCRIPTION_KEY}
+
+export HMAC_KEY_FILE="hmac_keys"
+export HMAC_KEY_PATH="secret/dsde/mint/${ENVIRONMENT}/lira/${HMAC_KEY_FILE}"
+
+export ADDITIONAL_METADATA="vx_queries/metadata_attachments.json"
+export SMART_SEQ_2_QUERY="vx_queries/smartseq2-query.json"
+export TENX_QUERY="vx_queries/10x-query.json"
