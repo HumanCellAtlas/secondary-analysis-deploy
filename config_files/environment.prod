@@ -2,18 +2,6 @@
 
 # Dynamic Variables
 
-export PIPELINE_TOOLS_VERSION="v0.46.1"
-
-export LIRA_VERSION="v0.18.1"
-
-export FALCON_VERSION="v0.1.4"
-
-export SS2_VERSION="smartseq2_v2.2.0"
-
-export TENX_VERSION="cellranger_v1.0.2"
-
-export OPTIMUS_VERSION="optimus_v0.3.0"
-
 export COLLECTION_NAME="lira-${ENVIRONMENT}"
 
 export GENERATE_CERTS="false"
