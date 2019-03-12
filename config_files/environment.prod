@@ -4,7 +4,7 @@
 
 export PIPELINE_TOOLS_VERSION="v0.46.1"
 
-export LIRA_VERSION="v0.17.0"
+export LIRA_VERSION="v0.18.1"
 
 export FALCON_VERSION="v0.1.4"
 
@@ -17,7 +17,7 @@ export COLLECTION_NAME="lira-${ENVIRONMENT}"
 export GENERATE_CERTS="false"
 
 export SS2_SUBSCRIPTION_ID="e11529ac-2e65-4940-9651-2b59e7c41275"
-export TENX_SUBSCRIPTION_ID="afc5eeba-8a3d-4ce7-8905-4ae314f8e210"
+export TENX_SUBSCRIPTION_ID="8f97fafa-6b79-4b47-b354-38fcac04b0d1"
 
 export GCLOUD_PROJECT="hca-dcp-pipelines-prod"
 
