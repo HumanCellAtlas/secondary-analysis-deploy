@@ -12,15 +12,12 @@ export SS2_VERSION="smartseq2_v2.2.0"
 
 export TENX_VERSION="cellranger_v1.0.2"
 
-export OPTIMUS_VERSION="optimus_v0.3.0"
-
 export COLLECTION_NAME="lira-${ENVIRONMENT}"
 
 export GENERATE_CERTS="false"
 
 export SS2_SUBSCRIPTION_ID="e11529ac-2e65-4940-9651-2b59e7c41275"
 export TENX_SUBSCRIPTION_ID="afc5eeba-8a3d-4ce7-8905-4ae314f8e210"
-export OPTIMUS_SUBSCRIPTION_ID="placeholder_optimus_subscription_id"
 
 export GCLOUD_PROJECT="hca-dcp-pipelines-prod"
 
