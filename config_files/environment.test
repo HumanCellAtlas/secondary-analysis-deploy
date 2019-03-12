@@ -12,12 +12,15 @@ export SS2_VERSION="smartseq2_v2.2.0"
 
 export TENX_VERSION="cellranger_v1.0.2"
 
+export OPTIMUS_VERSION="optimus_v0.3.0"
+
 export COLLECTION_NAME="lira-${ENVIRONMENT}"
 
 export GENERATE_CERTS="false"
 
 export SS2_SUBSCRIPTION_ID="af513bdb-075c-442b-bf01-5634ee9682a2"
 export TENX_SUBSCRIPTION_ID="28d3551d-b30f-473e-8e3b-6459f32a309b"
+export OPTIMUS_SUBSCRIPTION_ID="placeholder_optimus_subscription_id"
 
 export GCLOUD_PROJECT="broad-dsde-mint-test"
 
