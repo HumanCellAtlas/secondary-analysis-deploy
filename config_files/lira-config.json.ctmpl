@@ -31,7 +31,7 @@
     "submit_wdl": "{{ env "SUBMIT_WDL" }}",
     "wdls": [
         {
-            "analysis_wdls": {{ or (env "TENX_ANALYSIS_WDLS") "[]" }},
+            "analysis_wdls": {{ env "TENX_ANALYSIS_WDLS" }},
             "options_link": "{{ env "TENX_OPTIONS_LINK" }}",
             "subscription_id": "{{ env "TENX_SUBSCRIPTION_ID" }}",
             "wdl_static_inputs_link": "{{ env "TENX_WDL_STATIC_INPUTS_LINK" }}",
@@ -40,7 +40,7 @@
             "workflow_version": "{{ env "TENX_VERSION" }}"
         },
         {
-            "analysis_wdls": {{ or (env "SS2_ANALYSIS_WDLS") "[]" }},
+            "analysis_wdls": {{ env "SS2_ANALYSIS_WDLS" }},
             "options_link": "{{ env "SS2_OPTIONS_LINK" }}",
             "subscription_id": "{{ env "SS2_SUBSCRIPTION_ID" }}",
             "wdl_static_inputs_link": "{{ env "SS2_WDL_STATIC_INPUTS_LINK" }}",
@@ -49,7 +49,7 @@
             "workflow_version": "{{ env "SS2_VERSION" }}"
         },
         {
-            "analysis_wdls": {{ or (env "OPTIMUS_ANALYSIS_WDLS") "[]" }},
+            "analysis_wdls": {{ env "OPTIMUS_ANALYSIS_WDLS" }},
             "options_link": "{{ env "OPTIMUS_OPTIONS_LINK" }}",
             "subscription_id": "{{ env "OPTIMUS_SUBSCRIPTION_ID" }}",
             "wdl_static_inputs_link": "{{ env "OPTIMUS_WDL_STATIC_INPUTS_LINK" }}",
