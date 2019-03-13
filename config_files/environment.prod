@@ -2,22 +2,13 @@
 
 # Dynamic Variables
 
-export PIPELINE_TOOLS_VERSION="v0.46.1"
-
-export LIRA_VERSION="v0.18.1"
-
-export FALCON_VERSION="v0.1.4"
-
-export SS2_VERSION="smartseq2_v2.2.0"
-
-export TENX_VERSION="cellranger_v1.0.2"
-
 export COLLECTION_NAME="lira-${ENVIRONMENT}"
 
 export GENERATE_CERTS="false"
 
 export SS2_SUBSCRIPTION_ID="e11529ac-2e65-4940-9651-2b59e7c41275"
 export TENX_SUBSCRIPTION_ID="8f97fafa-6b79-4b47-b354-38fcac04b0d1"
+export OPTIMUS_SUBSCRIPTION_ID="placeholder_optimus_subscription_id"
 
 export GCLOUD_PROJECT="hca-dcp-pipelines-prod"
 
