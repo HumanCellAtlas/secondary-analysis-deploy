@@ -6,8 +6,8 @@ export COLLECTION_NAME="lira-${ENVIRONMENT}"
 
 export GENERATE_CERTS="false"
 
-export SS2_SUBSCRIPTION_ID="e11529ac-2e65-4940-9651-2b59e7c41275"
-export TENX_SUBSCRIPTION_ID="8f97fafa-6b79-4b47-b354-38fcac04b0d1"
+export SS2_SUBSCRIPTION_ID="b40f1941-26d2-4f4a-85e9-e19792f5ff0a"
+export TENX_SUBSCRIPTION_ID="abf34d7f-1051-417a-8b35-4b79d5c2a558"
 export OPTIMUS_SUBSCRIPTION_ID="placeholder_optimus_subscription_id"
 
 export GCLOUD_PROJECT="hca-dcp-pipelines-prod"
