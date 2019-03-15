@@ -2,22 +2,13 @@
 
 # Dynamic Variables
 
-export PIPELINE_TOOLS_VERSION="v0.46.1"
-
-export LIRA_VERSION="v0.18.1"
-
-export FALCON_VERSION="v0.1.4"
-
-export SS2_VERSION="smartseq2_v2.2.0"
-
-export TENX_VERSION="cellranger_v1.0.2"
-
 export COLLECTION_NAME="lira-${ENVIRONMENT}"
 
 export GENERATE_CERTS="false"
 
 export SS2_SUBSCRIPTION_ID="placeholder_ss2_subscription_id"
 export TENX_SUBSCRIPTION_ID="placeholder_10x_subscription_id"
+export OPTIMUS_SUBSCRIPTION_ID="placeholder_optimus_subscription_id"
 
 export GCLOUD_PROJECT="broad-dsde-mint-dev"
 
