@@ -23,7 +23,7 @@ export OPTIMUS_VERSION="optimus_v0.3.0"
 export USE_CAAS=true
 export MAX_CROMWELL_RETRIES=1
 export CAAS_ENVIRONMENT="caas-prod"
-export CROMWELL_URL="https://cromwell.${CAAS_ENVIRONMENT}.broadinstitute.org/api/workflows/v1"
+export CROMWELL_URL="https://cromwell.${CAAS_ENVIRONMENT}.broadinstitute.org"
 export MAX_CROMWELL_RETRIES=1
 export CAAS_KEY_FILE="${CAAS_ENVIRONMENT}-key.json"
 
