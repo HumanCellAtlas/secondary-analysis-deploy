@@ -2,16 +2,28 @@
 
 # Source the environment specific variables
 
+# Dynamic Variables
+
 source "${CONFIG_DIR}/environment.${ENVIRONMENT}"
 
-# Static Variables
+export PIPELINE_TOOLS_VERSION="v0.48.1"
+
+export LIRA_VERSION="v0.19.0"
+
+export FALCON_VERSION="v0.2.0"
+
+export SS2_VERSION="smartseq2_v2.2.0"
+
+export TENX_VERSION="cellranger_v1.0.2"
+
+export OPTIMUS_VERSION="optimus_v0.4.0"
 
 # Cromwell Variables
 
 export USE_CAAS=true
 export MAX_CROMWELL_RETRIES=1
 export CAAS_ENVIRONMENT="caas-prod"
-export CROMWELL_URL="https://cromwell.${CAAS_ENVIRONMENT}.broadinstitute.org/api/workflows/v1"
+export CROMWELL_URL="https://cromwell.${CAAS_ENVIRONMENT}.broadinstitute.org"
 export MAX_CROMWELL_RETRIES=1
 export CAAS_KEY_FILE="${CAAS_ENVIRONMENT}-key.json"
 
@@ -103,3 +115,30 @@ export TENX_OPTIONS_LINK="${PIPELINE_TOOLS_PREFIX}/adapter_pipelines/cellranger/
 export TENX_WDL_STATIC_INPUTS_LINK="${PIPELINE_TOOLS_PREFIX}/adapter_pipelines/cellranger/adapter_example_static.json"
 export TENX_WDL_LINK="${PIPELINE_TOOLS_PREFIX}/adapter_pipelines/cellranger/adapter.wdl"
 export TENX_WORKFLOW_NAME="Adapter10xCount"
+
+
+# TenX Variables
+
+export OPTIMUS_PREFIX="https://raw.githubusercontent.com/HumanCellAtlas/skylab/${OPTIMUS_VERSION}"
+export OPTIMUS_ANALYSIS_WDLS="[
+                    \"${OPTIMUS_PREFIX}/pipelines/optimus/Optimus.wdl\",
+                    \"${OPTIMUS_PREFIX}/library/tasks/FastqToUBam.wdl\",
+                    \"${OPTIMUS_PREFIX}/library/tasks/Attach10xBarcodes.wdl\",
+                    \"${OPTIMUS_PREFIX}/library/tasks/SplitBamByCellBarcode.wdl\",
+                    \"${OPTIMUS_PREFIX}/library/tasks/MergeSortBam.wdl\",
+                    \"${OPTIMUS_PREFIX}/library/tasks/CreateCountMatrix.wdl\",
+                    \"${OPTIMUS_PREFIX}/library/tasks/StarAlignBamSingleEnd.wdl\",
+                    \"${OPTIMUS_PREFIX}/library/tasks/TagGeneExon.wdl\",
+                    \"${OPTIMUS_PREFIX}/library/tasks/CorrectUmiMarkDuplicates.wdl\",
+                    \"${OPTIMUS_PREFIX}/library/tasks/SequenceDataWithMoleculeTagMetrics.wdl\",
+                    \"${OPTIMUS_PREFIX}/library/tasks/TagSortBam.wdl\",
+                    \"${OPTIMUS_PREFIX}/library/tasks/RunEmptyDrops.wdl\",
+                    \"${OPTIMUS_PREFIX}/library/tasks/ZarrUtils.wdl\",
+                    \"${OPTIMUS_PREFIX}/library/tasks/Picard.wdl\",
+                    \"${OPTIMUS_PREFIX}/library/tasks/MarkDuplicates.wdl\"
+                ]"
+
+export OPTIMUS_OPTIONS_LINK="${PIPELINE_TOOLS_PREFIX}/adapter_pipelines/Optimus/options.json"
+export OPTIMUS_WDL_STATIC_INPUTS_LINK="${PIPELINE_TOOLS_PREFIX}/adapter_pipelines/Optimus/adapter_example_static.json"
+export OPTIMUS_WDL_LINK="${PIPELINE_TOOLS_PREFIX}/adapter_pipelines/Optimus/adapter.wdl"
+export OPTIMUS_WORKFLOW_NAME="AdapterOptimus"
