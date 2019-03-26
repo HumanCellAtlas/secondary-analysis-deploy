@@ -21,6 +21,13 @@ spec:
               image: {{env "FALCON_DOCKER_IMAGE"}}
               imagePullPolicy: Always
 
+              livenessProbe:
+                httpGet:
+                  path: /health
+                  port: 8000
+                initialDelaySeconds: 60
+                periodSeconds: 10
+
               volumeMounts:
                   - name: falcon-config
                     mountPath: /etc/falcon
