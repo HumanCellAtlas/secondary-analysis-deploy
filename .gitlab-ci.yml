@@ -9,7 +9,7 @@ deploy_lira_dev:
   stage: deploy
   script:
     - export ENVIRONMENT=${CI_BUILD_REF_NAME}
-    - bash gitlab/test.sh
+    - bash gitlab/deploy_falcon.sh
 
 deploy_falcon_dev:
   tags:
@@ -17,7 +17,7 @@ deploy_falcon_dev:
   stage: deploy
   script:
     - export ENVIRONMENT=${CI_BUILD_REF_NAME}
-    - bash gitlab/test.sh
+    - bash gitlab/deploy_lira.sh
 
 #deploy_lira_test:
 #  tags:
