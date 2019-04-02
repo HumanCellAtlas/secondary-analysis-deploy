@@ -9,7 +9,7 @@ deploy_lira_dev:
   stage: deploy
   script:
     - export ENVIRONMENT=${CI_BUILD_REF_NAME}
-    - bash gitlab/deploy_falcon.sh
+    - bash gitlab/deploy_lira.sh
 
 deploy_falcon_dev:
   tags:
@@ -17,59 +17,4 @@ deploy_falcon_dev:
   stage: deploy
   script:
     - export ENVIRONMENT=${CI_BUILD_REF_NAME}
-    - bash gitlab/deploy_lira.sh
-
-#deploy_lira_test:
-#  tags:
-#    - green
-#  stage: test
-#  script:
-#    - export ENVIRONMENT=test
-#    - bash gitlab/deploy_lira.sh
-#  when: manual
-#
-#deploy_falcon_test:
-#  tags:
-#    - green
-#  stage: test
-#  script:
-#    - export ENVIRONMENT=test
-#    - bash gitlab/deploy_falcon.sh
-#  when: manual
-#
-#deploy_lira_staging:
-#  tags:
-#    - green
-#  stage: staging
-#  script:
-#    - export ENVIRONMENT=staging
-#    - bash gitlab/deploy_lira.sh
-#  when: manual
-#
-#deploy_falcon_staging:
-#  tags:
-#    - green
-#  stage: staging
-#  script:
-#    - export ENVIRONMENT=staging
-#    - bash gitlab/deploy_falcon.sh
-#  when: manual
-#
-#deploy_lira_prod:
-#  tags:
-#    - green
-#  stage: prod
-#  script:
-#    - export ENVIRONMENT=prod
-#    - bash gitlab/deploy_lira.sh
-#  when: manual
-#
-#deploy_falcon_prod:
-#  tags:
-#    - green
-#  stage: prod
-#  script:
-#    - export ENVIRONMENT=prod
-#    - bash gitlab/deploy_falcon.sh
-#  when: manual
-
+    - bash gitlab/deploy_falcon.sh
