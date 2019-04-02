@@ -8,7 +8,7 @@ deploy_lira_dev:
     - green
   stage: deploy
   script:
-    - export ENVIRONMENT=${BRANCH}
+    - export ENVIRONMENT=${CI_BUILD_REF_NAME}
     - bash gitlab/test.sh
 
 deploy_falcon_dev:
@@ -16,7 +16,7 @@ deploy_falcon_dev:
     - green
   stage: deploy
   script:
-    - export ENVIRONMENT=${BRANCH}
+    - export ENVIRONMENT=${CI_BUILD_REF_NAME}
     - bash gitlab/test.sh
 
 #deploy_lira_test:
