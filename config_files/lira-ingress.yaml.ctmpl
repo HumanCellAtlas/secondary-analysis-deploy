@@ -8,7 +8,14 @@ metadata:
     kubernetes.io/ingress.allow-http: "false"
 spec:
   tls:
-    - secretName: {{ env "TLS_SECRET_NAME" }}
-  backend:
-    serviceName: {{ env "LIRA_SERVICE_NAME" }}
-    servicePort: 8080
+  - hosts:
+      - pipelines.dev.humancellatlas.org
+    secretName: {{ env "TLS_SECRET_NAME" }}
+  rules:
+    - host: pipelines.dev.humancellatlas.org
+      http:
+        paths:
+        -path: /
+          backend:
+            serviceName: {{ env "LIRA_SERVICE_NAME" }}
+            servicePort: 8080
