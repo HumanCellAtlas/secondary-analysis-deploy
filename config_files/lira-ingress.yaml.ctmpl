@@ -15,7 +15,7 @@ spec:
     - host: pipelines.dev.humancellatlas.org
       http:
         paths:
-        -path: /
+        - path: /
           backend:
             serviceName: {{ env "LIRA_SERVICE_NAME" }}
             servicePort: 8080
