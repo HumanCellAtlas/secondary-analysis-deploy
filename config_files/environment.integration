@@ -7,8 +7,9 @@ export COLLECTION_NAME="lira-${ENVIRONMENT}"
 export GENERATE_CERTS="false"
 
 export SS2_SUBSCRIPTION_ID="d1b8fc71-3753-43a5-b173-2f292da8154f"
-export TENX_SUBSCRIPTION_ID="89bfca93-b877-48ef-995d-c69435e83950"
-export OPTIMUS_SUBSCRIPTION_ID="placeholder_optimus_subscription_id"
+
+export TENX_SUBSCRIPTION_ID="placeholder_10x_subscription_id"
+export OPTIMUS_SUBSCRIPTION_ID="89bfca93-b877-48ef-995d-c69435e83950"
 
 export GCLOUD_PROJECT="broad-dsde-mint-integration"
 
