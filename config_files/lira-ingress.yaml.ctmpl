@@ -4,7 +4,7 @@ metadata:
   name: {{ env "LIRA_INGRESS_NAME" }}
   annotations:
     kubernetes.io/ingress.global-static-ip-name: {{ env "LIRA_GLOBAL_IP_NAME" }}
-    kubernetes.io/ingress.allow-http: "false"
+    ingress.kubernetes.io/ssl-redirect: "true"
 
 spec:
   tls:
