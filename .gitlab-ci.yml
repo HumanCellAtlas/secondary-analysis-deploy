@@ -8,7 +8,8 @@ deploy_lira_dev:
     - green
   stage: deploy
   script:
-    - export ENVIRONMENT=${CI_BUILD_REF_NAME}
+#    - export ENVIRONMENT=${CI_BUILD_REF_NAME}
+    - export ENVIRONMENT=dev
     - bash gitlab/deploy_lira.sh
 
 deploy_falcon_dev:
