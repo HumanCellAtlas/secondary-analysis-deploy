@@ -22,4 +22,4 @@ spec:
             - path: /*
               backend:
                 serviceName: {{ env "LIRA_SERVICE_NAME" }}
-                servicePort: 8080
+                servicePort: http
