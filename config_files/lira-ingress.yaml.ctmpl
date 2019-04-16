@@ -1,24 +1,24 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-    name: {{ env "LIRA_INGRESS_NAME" }}
-    annotations:
-        kubernetes.io/ingress.global-static-ip-name: {{ env "LIRA_GLOBAL_IP_NAME" }}
-        kubernetes.io/ingress.allow-http: "false"
+  name: {{ env "LIRA_INGRESS_NAME" }}
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: {{ env "LIRA_GLOBAL_IP_NAME" }}
+    kubernetes.io/ingress.allow-http: "false"
 
 spec:
-    tls:
-    - hosts:
-      - pipelines.dev.humancellatlas.org
-      secretName: {{ env "TLS_SECRET_NAME" }}
-      backend:
-        serviceName: {{ env "LIRA_SERVICE_NAME" }}
-        servicePort: http
-      rules:
-      - host: "pipelines.dev.humancellatlas.org"
-        http:
-            paths:
-            - path: /*
-              backend:
-                serviceName: {{ env "LIRA_SERVICE_NAME" }}
-                servicePort: http
+  tls:
+  - hosts:
+    - pipelines.dev.humancellatlas.org
+    secretName: {{ env "TLS_SECRET_NAME" }}
+  backend:
+    serviceName: {{ env "LIRA_SERVICE_NAME" }}
+    servicePort: http
+  rules:
+  - host: "pipelines.dev.humancellatlas.org"
+    http:
+      paths:
+      - path: /*
+        backend:
+          serviceName: {{ env "LIRA_SERVICE_NAME" }}
+          servicePort: http
