@@ -4,13 +4,12 @@ metadata:
     name: {{ env "LIRA_INGRESS_NAME" }}
     annotations:
         kubernetes.io/ingress.global-static-ip-name: {{ env "LIRA_GLOBAL_IP_NAME" }}
-        kubernetes.io/ingress.class: "gce"
         kubernetes.io/ingress.allow-http: "false"
 
 spec:
     tls:
     - hosts:
-        - pipelines.dev.humancellatlas.org
+      - pipelines.dev.humancellatlas.org
       secretName: {{ env "TLS_SECRET_NAME" }}
       backend:
         serviceName: {{ env "LIRA_SERVICE_NAME" }}
