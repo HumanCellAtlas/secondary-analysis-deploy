@@ -4,11 +4,15 @@ metadata:
   name: {{ env "LIRA_INGRESS_NAME" }}
   annotations:
     kubernetes.io/ingress.global-static-ip-name: {{ env "LIRA_GLOBAL_IP_NAME" }}
-    kubernetes.io/ingress.class: "gce"
     kubernetes.io/ingress.allow-http: "false"
+
 spec:
   tls:
-    - secretName: {{ env "TLS_SECRET_NAME" }}
-  backend:
-    serviceName: {{ env "LIRA_SERVICE_NAME" }}
-    servicePort: 8080
+  - secretName: {{ env "TLS_SECRET_NAME" }}
+  rules:
+  - http:
+      paths:
+      - path: /*
+        backend:
+          serviceName: {{ env "LIRA_SERVICE_NAME" }}
+          servicePort: http
