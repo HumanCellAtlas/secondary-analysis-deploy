@@ -6,7 +6,7 @@
 
 source "${CONFIG_DIR}/environment.${ENVIRONMENT}"
 
-export PIPELINE_TOOLS_VERSION="v0.49.0"
+export PIPELINE_TOOLS_VERSION="v0.49.1"
 
 export LIRA_VERSION="v0.19.0"
 
