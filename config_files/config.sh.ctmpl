@@ -6,17 +6,17 @@
 
 source "${CONFIG_DIR}/environment.${ENVIRONMENT}"
 
-export PIPELINE_TOOLS_VERSION="v0.49.1"
+export PIPELINE_TOOLS_VERSION="v0.50.1"
 
-export LIRA_VERSION="v0.19.0"
+export LIRA_VERSION="v0.20.0"
 
 export FALCON_VERSION="v0.3.0"
 
-export SS2_VERSION="smartseq2_v2.2.0"
+export SS2_VERSION="smartseq2_v2.3.0"
 
 export TENX_VERSION="cellranger_v1.0.2"
 
-export OPTIMUS_VERSION="optimus_v1.0.0"
+export OPTIMUS_VERSION="optimus_v1.1.0"
 
 
 # Cromwell Variables
@@ -136,7 +136,7 @@ export OPTIMUS_ANALYSIS_WDLS="[
                     \"${OPTIMUS_PREFIX}/library/tasks/RunEmptyDrops.wdl\",
                     \"${OPTIMUS_PREFIX}/library/tasks/ZarrUtils.wdl\",
                     \"${OPTIMUS_PREFIX}/library/tasks/Picard.wdl\",
-                    \"${OPTIMUS_PREFIX}/library/tasks/MarkDuplicates.wdl\"
+                    \"${OPTIMUS_PREFIX}/library/tasks/UmiCorrection.wdl\"
                 ]"
 
 export OPTIMUS_OPTIONS_LINK="${PIPELINE_TOOLS_PREFIX}/adapter_pipelines/Optimus/options.json"
