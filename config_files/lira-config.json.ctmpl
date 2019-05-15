@@ -49,6 +49,15 @@
             "workflow_version": "{{ env "SS2_VERSION" }}"
         },
         {
+            "analysis_wdls": {{ or (env "SS2_SE_ANALYSIS_WDLS") "[]" }},
+            "options_link": "{{ env "SS2_SE_OPTIONS_LINK" }}",
+            "subscription_id": "{{ env "SS2_SE_SUBSCRIPTION_ID" }}",
+            "wdl_static_inputs_link": "{{ env "SS2_SE_WDL_STATIC_INPUTS_LINK" }}",
+            "wdl_link": "{{ env "SS2_SE_WDL_LINK" }}",
+            "workflow_name": "{{ env "SS2_SE_WORKFLOW_NAME" }}",
+            "workflow_version": "{{ env "SS2_SE_VERSION" }}"
+        },
+        {
             "analysis_wdls": {{ or (env "OPTIMUS_ANALYSIS_WDLS") "[]" }},
             "options_link": "{{ env "OPTIMUS_OPTIONS_LINK" }}",
             "subscription_id": "{{ env "OPTIMUS_SUBSCRIPTION_ID" }}",
