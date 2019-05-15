@@ -56,6 +56,15 @@
             "wdl_link": "{{ env "OPTIMUS_WDL_LINK" }}",
             "workflow_name": "{{ env "OPTIMUS_WORKFLOW_NAME" }}",
             "workflow_version": "{{ env "OPTIMUS_VERSION" }}"
+        },
+        {
+            "analysis_wdls": {{ or (env "OPTIMUS_MOUSE_ANALYSIS_WDLS") "[]" }},
+            "options_link": "{{ env "OPTIMUS_MOUSE_OPTIONS_LINK" }}",
+            "subscription_id": "{{ env "OPTIMUS_MOUSE_SUBSCRIPTION_ID" }}",
+            "wdl_static_inputs_link": "{{ env "OPTIMUS_MOUSE_WDL_STATIC_INPUTS_LINK" }}",
+            "wdl_link": "{{ env "OPTIMUS_MOUSE_WDL_LINK" }}",
+            "workflow_name": "{{ env "OPTIMUS_MOUSE_WORKFLOW_NAME" }}",
+            "workflow_version": "{{ env "OPTIMUS_MOUSE_VERSION" }}"
         }
     ]
 }

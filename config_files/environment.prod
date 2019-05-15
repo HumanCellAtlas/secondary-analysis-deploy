@@ -9,6 +9,7 @@ export GENERATE_CERTS="false"
 export SS2_SUBSCRIPTION_ID="b40f1941-26d2-4f4a-85e9-e19792f5ff0a"
 export TENX_SUBSCRIPTION_ID="placeholder_10x_subscription_id"
 export OPTIMUS_SUBSCRIPTION_ID="abf34d7f-1051-417a-8b35-4b79d5c2a558"
+export OPTIMUS_MOUSE_SUBSCRIPTION_ID="placeholder_optimus_mouse_subscription_id"
 
 export GCLOUD_PROJECT="hca-dcp-pipelines-prod"
 

@@ -125,6 +125,12 @@ docker run -i --rm \
               -e USE_HMAC="${USE_HMAC}" \
               -e SUBMIT_WDL="${SUBMIT_WDL}" \
               -e MAX_CROMWELL_RETRIES="${MAX_CROMWELL_RETRIES}" \
+              -e OPTIMUS_MOUSE_PREFIX="${OPTIMUS_MOUSE_PREFIX}" \
+              -e OPTIMUS_MOUSE_ANALYSIS_WDLS="${OPTIMUS_MOUSE_ANALYSIS_WDLS}" \
+              -e OPTIMUS_MOUSE_OPTIONS_LINK="${OPTIMUS_MOUSE_OPTIONS_LINK}" \
+              -e OPTIMUS_MOUSE_WDL_STATIC_INPUTS_LINK="${PIPELINE_TOOLS_PREFIX}/adapter_pipelines/Optimus_mouse/adapter_example_static.json" \
+              -e OPTIMUS_MOUSE_WDL_LINK="${OPTIMUS_MOUSE_WDL_LINK}" \
+              -e OPTIMUS_MOUSE_WORKFLOW_NAME="${OPTIMUS_MOUSE_WORKFLOW_NAME}" \
               -e TENX_ANALYSIS_WDLS="${TENX_ANALYSIS_WDLS}" \
               -e TENX_OPTIONS_LINK="${TENX_OPTIONS_LINK}" \
               -e TENX_SUBSCRIPTION_ID="${TENX_SUBSCRIPTION_ID}" \

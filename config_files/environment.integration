@@ -10,6 +10,7 @@ export SS2_SUBSCRIPTION_ID="8f8770e3-94f6-400e-8a12-452b84b9160d"
 
 export TENX_SUBSCRIPTION_ID="placeholder_10x_subscription_id"
 export OPTIMUS_SUBSCRIPTION_ID="d8641126-f89c-4ba8-ba14-80fd111ea89c"
+export OPTIMUS_MOUSE_SUBSCRIPTION_ID="placeholder_optimus_mouse_subscription_id"
 
 export GCLOUD_PROJECT="broad-dsde-mint-integration"
 

@@ -9,6 +9,7 @@ export GENERATE_CERTS="false"
 export SS2_SUBSCRIPTION_ID="placeholder_ss2_subscription_id"
 export TENX_SUBSCRIPTION_ID="placeholder_10x_subscription_id"
 export OPTIMUS_SUBSCRIPTION_ID="placeholder_optimus_subscription_id"
+export OPTIMUS_MOUSE_SUBSCRIPTION_ID="placeholder_optimus_mouse_subscription_id"
 
 export GCLOUD_PROJECT="broad-dsde-mint-dev"
 

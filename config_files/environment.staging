@@ -9,6 +9,7 @@ export GENERATE_CERTS="false"
 export SS2_SUBSCRIPTION_ID="115a4987-8d50-49fd-ac04-8fa8fb4351a8"
 export TENX_SUBSCRIPTION_ID="placeholder_10x_subscription_id"
 export OPTIMUS_SUBSCRIPTION_ID="29e566a9-a425-4a43-a144-ea8429d0f5ba"
+export OPTIMUS_MOUSE_SUBSCRIPTION_ID="placeholder_optimus_mouse_subscription_id"
 
 export GCLOUD_PROJECT="broad-dsde-mint-staging"
 
