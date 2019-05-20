@@ -4,7 +4,7 @@
 
 export COLLECTION_NAME="lira-${ENVIRONMENT}"
 
-export GENERATE_CERTS="false"
+export GENERATE_CERTS="true"
 
 export SS2_SUBSCRIPTION_ID="e83bce2b-bd78-4ef3-b9d2-f1d81f6bac11"
 export TENX_SUBSCRIPTION_ID="placeholder_10x_subscription_id"
