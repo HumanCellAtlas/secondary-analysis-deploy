@@ -4,7 +4,7 @@
 
 export COLLECTION_NAME="lira-${ENVIRONMENT}"
 
-export GENERATE_CERTS="true"
+export GENERATE_CERTS="false"
 
 export SS2_SUBSCRIPTION_ID="8f8770e3-94f6-400e-8a12-452b84b9160d"
 
