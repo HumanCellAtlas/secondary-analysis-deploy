@@ -12,7 +12,7 @@ export LIRA_VERSION="v0.20.0"
 
 export FALCON_VERSION="v0.3.0"
 
-export SS2_VERSION="smartseq2_v2.3.0"
+export SS2_VERSION="smartseq2_v2.4.0"
 
 export TENX_VERSION="cellranger_v1.0.2"
 
