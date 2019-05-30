@@ -7,6 +7,7 @@ export COLLECTION_NAME="lira-${ENVIRONMENT}"
 export GENERATE_CERTS="false"
 
 export SS2_SUBSCRIPTION_ID="115a4987-8d50-49fd-ac04-8fa8fb4351a8"
+export SS2_SE_SUBSCRIPTION_ID="placeholder_ss2_se_subscription_id"
 export TENX_SUBSCRIPTION_ID="placeholder_10x_subscription_id"
 export OPTIMUS_SUBSCRIPTION_ID="29e566a9-a425-4a43-a144-ea8429d0f5ba"
 

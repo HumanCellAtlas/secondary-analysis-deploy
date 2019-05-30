@@ -14,6 +14,8 @@ export FALCON_VERSION="v0.3.0"
 
 export SS2_VERSION="smartseq2_v2.4.0"
 
+export SS2_SE_VERSION="smartseq2singleend_v1.0.0"
+
 export TENX_VERSION="cellranger_v1.0.2"
 
 export OPTIMUS_VERSION="optimus_v1.1.0"
@@ -89,6 +91,22 @@ export TLS_PRIVATE_KEY_DIR="lira-ssl-certificate.key"
 export TLS_SECRET_NAME="hca-tls-secret"-$(date '+%Y-%m-%d-%H-%M-%S')
 
 
+# Smart Seq 2 Single End Variables
+
+export SS2_SE_PREFIX="https://raw.githubusercontent.com/HumanCellAtlas/skylab/${SS2_SE_VERSION}"
+export SS2_SE_ANALYSIS_WDLS="[
+                \"${SS2_SE_PREFIX}pipelines/smartseq2_single_sample_unpaired/SmartSeq2SingleSampleUnpaired.wdl\",
+                \"${SS2_SE_PREFIX}/library/tasks/HISAT2.wdl\",
+                \"${SS2_SE_PREFIX}/library/tasks/Picard.wdl\",
+                \"${SS2_SE_PREFIX}/library/tasks/RSEM.wdl\",
+                \"${SS2_SE_PREFIX}/library/tasks/GroupMetricsOutputs.wdl\",
+                \"${SS2_SE_PREFIX}/library/tasks/ZarrUtils.wdl\"
+            ]"
+export SS2_SE_OPTIONS_LINK="${PIPELINE_TOOLS_PREFIX}/adapter_pipelines/ss2_single_end/options.json"
+export SS2_SE_WDL_STATIC_INPUTS_LINK="${PIPELINE_TOOLS_PREFIX}/adapter_pipelines/ss2_single_end/adapter_example_static.json"
+export SS2_SE_WDL_LINK="${PIPELINE_TOOLS_PREFIX}/adapter_pipelines/ss2_single_end/adapter.wdl"
+export SS2_SE_WORKFLOW_NAME="AdapterSmartSeq2SingleCellUnpaired"
+
 # Smart Seq 2 Variables
 
 export SS2_PREFIX="https://raw.githubusercontent.com/HumanCellAtlas/skylab/${SS2_VERSION}"
@@ -104,7 +122,6 @@ export SS2_OPTIONS_LINK="${PIPELINE_TOOLS_PREFIX}/adapter_pipelines/ss2_single_s
 export SS2_WDL_STATIC_INPUTS_LINK="${PIPELINE_TOOLS_PREFIX}/adapter_pipelines/ss2_single_sample/adapter_example_static.json"
 export SS2_WDL_LINK="${PIPELINE_TOOLS_PREFIX}/adapter_pipelines/ss2_single_sample/adapter.wdl"
 export SS2_WORKFLOW_NAME="AdapterSmartSeq2SingleCell"
-
 
 # TenX Variables
 

@@ -132,6 +132,13 @@ docker run -i --rm \
               -e TENX_WDL_LINK="${TENX_WDL_LINK}" \
               -e TENX_WORKFLOW_NAME="${TENX_WORKFLOW_NAME}" \
               -e TENX_VERSION="${TENX_VERSION}" \
+              -e SS2_SE_ANALYSIS_WDLS="${SS2_SE_ANALYSIS_WDLS}" \
+              -e SS2_SE_OPTIONS_LINK="${SS2_SE_OPTIONS_LINK}" \
+              -e SS2_SE_SUBSCRIPTION_ID="${SS2_SE_SUBSCRIPTION_ID}" \
+              -e SS2_SE_WDL_STATIC_INPUTS_LINK="${SS2_SE_WDL_STATIC_INPUTS_LINK}" \
+              -e SS2_SE_WDL_LINK="${SS2_SE_WDL_LINK}" \
+              -e SS2_SE_WORKFLOW_NAME="${SS2_SE_WORKFLOW_NAME}" \
+              -e SS2_SE_VERSION="${SS2_SE_VERSION}" \
               -e SS2_ANALYSIS_WDLS="${SS2_ANALYSIS_WDLS}" \
               -e SS2_OPTIONS_LINK="${SS2_OPTIONS_LINK}" \
               -e SS2_SUBSCRIPTION_ID="${SS2_SUBSCRIPTION_ID}" \
