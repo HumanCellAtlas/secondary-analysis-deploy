@@ -8,7 +8,7 @@ source "${CONFIG_DIR}/environment.${ENVIRONMENT}"
 
 export PIPELINE_TOOLS_VERSION="v0.55.0"
 
-export LIRA_VERSION="v0.21.0"
+export LIRA_VERSION="v0.20.0"
 
 export FALCON_VERSION="v0.4.1"
 
