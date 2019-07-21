@@ -6,17 +6,17 @@
 
 source "${CONFIG_DIR}/environment.${ENVIRONMENT}"
 
-export PIPELINE_TOOLS_VERSION="v0.52.0"
+export PIPELINE_TOOLS_VERSION="v0.55.0"
 
 export LIRA_VERSION="v0.20.0"
 
-export FALCON_VERSION="v0.3.0"
+export FALCON_VERSION="v0.4.1"
 
 export SS2_VERSION="smartseq2_v2.4.0"
 
 export TENX_VERSION="cellranger_v1.0.2"
 
-export OPTIMUS_VERSION="optimus_v1.2.0"
+export OPTIMUS_VERSION="optimus_v1.3.1"
 
 
 # Cromwell Variables
@@ -137,7 +137,8 @@ export OPTIMUS_ANALYSIS_WDLS="[
                     \"${OPTIMUS_PREFIX}/library/tasks/ZarrUtils.wdl\",
                     \"${OPTIMUS_PREFIX}/library/tasks/Picard.wdl\",
                     \"${OPTIMUS_PREFIX}/library/tasks/UmiCorrection.wdl\",
-                    \"${OPTIMUS_PREFIX}/library/tasks/ScatterBam.wdl\"
+                    \"${OPTIMUS_PREFIX}/library/tasks/ScatterBam.wdl\",
+                    \"${OPTIMUS_PREFIX}/library/tasks/ModifyGtf.wdl\"
                 ]"
 
 export OPTIMUS_OPTIONS_LINK="${PIPELINE_TOOLS_PREFIX}/adapter_pipelines/Optimus/options.json"
