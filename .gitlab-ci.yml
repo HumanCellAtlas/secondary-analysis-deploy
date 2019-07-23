@@ -17,6 +17,8 @@ deploy_lira:
       - test
       - integration
       - staging
+  tags:
+    - green
   when: always
 
 deploy_falcon:
@@ -29,4 +31,6 @@ deploy_falcon:
       - test
       - integration
       - staging
+  tags:
+    - green
   when: always

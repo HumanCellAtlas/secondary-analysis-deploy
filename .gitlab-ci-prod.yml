@@ -13,6 +13,8 @@ deploy_lira:
   only:
     refs:
       - prod
+  tags:
+    - green
   when: manual
 
 deploy_falcon:
@@ -22,4 +24,6 @@ deploy_falcon:
   only:
     refs:
       - prod
+  tags:
+    - green
   when: manual
