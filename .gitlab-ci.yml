@@ -19,7 +19,6 @@ deploy_lira:
       - staging
   when: always
 
-
 deploy_falcon:
   stage: deploy
   script:
