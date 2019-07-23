@@ -10,10 +10,22 @@ deploy_lira:
   stage: deploy
   script:
     - bash gitlab/deploy_lira.sh
+  only:
+    refs:
+      - dev
+      - test
+      - integration
+      - staging
   when: always
 
 deploy_falcon:
   stage: deploy
   script:
     - bash gitlab/deploy_falcon.sh
+  only:
+    refs:
+      - dev
+      - test
+      - integration
+      - staging
   when: always
