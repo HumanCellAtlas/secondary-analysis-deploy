@@ -3,18 +3,22 @@ image: rhiananthony/dsde-toolbox:gitlab-runner-11.4.4
 stages:
   - deploy
 
-deploy_lira_dev:
-  tags:
-    - green
+deploy_lira_to_dev:
   stage: deploy
+  variables:
+    - ENVIRONMENT=dev
   script:
-    - export ENVIRONMENT=${CI_BUILD_REF_NAME}
     - bash gitlab/deploy_lira.sh
+  environment:
+    name: dev
+  when: always
 
-deploy_falcon_dev:
-  tags:
-    - green
+deploy_falcon_to_dev:
   stage: deploy
+  variables:
+      - ENVIRONMENT=dev
   script:
-    - export ENVIRONMENT=${CI_BUILD_REF_NAME}
     - bash gitlab/deploy_falcon.sh
+  environment:
+    name: dev
+  when: always
