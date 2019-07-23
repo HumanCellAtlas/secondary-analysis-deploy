@@ -12,11 +12,8 @@ deploy_lira:
     - bash gitlab/deploy_lira.sh
   only:
     refs:
-      - dev
-      - test
-      - integration
-      - staging
-  when: always
+      - prod
+  when: manual
 
 deploy_falcon:
   stage: deploy
@@ -24,8 +21,5 @@ deploy_falcon:
     - bash gitlab/deploy_falcon.sh
   only:
     refs:
-      - dev
-      - test
-      - integration
-      - staging
-  when: always
+      - prod
+  when: manual
