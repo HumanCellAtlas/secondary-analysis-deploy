@@ -18,8 +18,7 @@ export TENX_VERSION="cellranger_v1.0.2"
 
 export OPTIMUS_VERSION="optimus_v1.3.1"
 
-export TEST="whaaaa"
-
+export TEST="why test me"
 
 # Cromwell Variables
 
