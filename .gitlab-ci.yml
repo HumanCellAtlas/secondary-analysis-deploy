@@ -13,6 +13,7 @@ deploy_lira:
   only:
     refs:
       - dev
+      - ra_dev_cicd_deploy
       - test
       - integration
       - staging
