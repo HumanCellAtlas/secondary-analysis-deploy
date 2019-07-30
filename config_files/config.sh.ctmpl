@@ -6,7 +6,7 @@
 
 source "${CONFIG_DIR}/environment.${ENVIRONMENT}"
 
-export PIPELINE_TOOLS_VERSION="v0.55.0"
+export PIPELINE_TOOLS_VERSION="v0.56.1"
 
 export LIRA_VERSION="v0.20.0"
 
@@ -16,7 +16,7 @@ export SS2_VERSION="smartseq2_v2.4.0"
 
 export TENX_VERSION="cellranger_v1.0.2"
 
-export OPTIMUS_VERSION="optimus_v1.3.1"
+export OPTIMUS_VERSION="optimus_v1.3.2"
 
 
 # Cromwell Variables
