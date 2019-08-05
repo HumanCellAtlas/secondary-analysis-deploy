@@ -12,7 +12,6 @@ MYSELF="$(cd "$(dirname "$0")" && pwd)/$(basename "$0")"
 if [[ -z "${CERTBOT_DOMAIN}" ]]; then
 
     mkdir -p "${PWD}/letsencrypt"
-    echo "The CERTBOT_DOMAIN is ${CERTBOT_DOMAIN}"
 
     certbot certonly \
         --non-interactive \
