@@ -47,7 +47,7 @@ kubectl apply -f ${CONFIG_DIR}/lira-service.yaml \
 
 # TLS CERT GENERATION AND KUBERNETES INGRESS
 
-if [ "${GENERATE_CERTS}" == "true" ];
+if [[ "${GENERATE_CERTS}" == "true" ]];
 then
     sh "${DEPLOY_DIR}/generate_certs.sh"
 fi
@@ -120,7 +120,7 @@ echo "Rendering lira config file"
 sh "${DEPLOY_DIR}/render-ctmpls.sh" -k "${CONFIG_DIR}/${LIRA_CONFIG_FILE}.ctmpl"
 
 echo "Deploying lira config file"
-if [ "${USE_CAAS}" == "true" ];
+if [[ "${USE_CAAS}" == "true" ]];
 then
     kubectl create secret generic "${LIRA_CONFIG_SECRET_NAME}" \
             --from-file=config="${CONFIG_DIR}/${LIRA_CONFIG_FILE}" \
