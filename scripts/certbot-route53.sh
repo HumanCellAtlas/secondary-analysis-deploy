@@ -24,7 +24,8 @@ if [ -z "${CERTBOT_DOMAIN}" ]; then
         --agree-tos \
         --manual-public-ip-logging-ok \
         --email mintteam@broadinstitute.org \
-        --domains "${DOMAIN}"
+        --domains "${DOMAIN}" \
+        --dry-run
 
 else
     echo "Reading CERTBOT_DOMAIN from file"
