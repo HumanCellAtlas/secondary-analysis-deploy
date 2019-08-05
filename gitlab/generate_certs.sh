@@ -18,6 +18,9 @@ EOF
 
 echo "Running certbot-route53 script"
 sh "${SCRIPTS_DIR}"/certbot-route53.sh
+if [[ $? = 1 ]]; then
+    exit 1
+fi
 
 cd ..
 
