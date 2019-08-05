@@ -51,6 +51,7 @@ else
     if [[ -z "${HOSTED_ZONE_ID}" ]]; then
         if [[ -n "${DOMAIN}" ]]; then
           echo "No hosted zone found that matches domain ${DOMAIN} or hostname ${CERTBOT_DOMAIN}"
+          echo ${AWS_ACCESS_KEY_ID}
           exit 1
         else
           echo "No hosted zone found that matches ${CERTBOT_DOMAIN}"
