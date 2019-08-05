@@ -38,6 +38,8 @@ else
 
     HOSTED_ZONE_ID="$(aws route53 list-hosted-zones --query "${QUERY}" --output text)"
 
+    echo "The HOSTED_ZONE_ID is ${HOSTED_ZONE_ID}"
+
     if [[ -z "${HOSTED_ZONE_ID}" ]]; then
         # CERTBOT_DOMAIN is a hostname, not a domain (zone)
         # We strip out the hostname part to leave only the domain
@@ -51,7 +53,6 @@ else
     if [[ -z "${HOSTED_ZONE_ID}" ]]; then
         if [[ -n "${DOMAIN}" ]]; then
           echo "No hosted zone found that matches domain ${DOMAIN} or hostname ${CERTBOT_DOMAIN}"
-          exit 1
         else
           echo "No hosted zone found that matches ${CERTBOT_DOMAIN}"
         fi
