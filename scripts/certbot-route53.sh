@@ -12,19 +12,20 @@ MYSELF="$(cd "$(dirname "$0")" && pwd)/$(basename "$0")"
 if [[ -z "${CERTBOT_DOMAIN}" ]]; then
 
     mkdir -p "${PWD}/letsencrypt"
+    echo "The CERTBOT_DOMAIN is ${CERTBOT_DOMAIN}"
 
-    certbot certonly \
-        --non-interactive \
-        --manual \
-        --manual-auth-hook "${MYSELF}" \
-        --preferred-challenge dns \
-        --config-dir "${PWD}/letsencrypt" \
-        --work-dir "${PWD}/letsencrypt" \
-        --logs-dir "${PWD}/letsencrypt" \
-        --agree-tos \
-        --manual-public-ip-logging-ok \
-        --email mintteam@broadinstitute.org \
-        --domains "${DOMAIN}"
+#    certbot certonly \
+#        --non-interactive \
+#        --manual \
+#        --manual-auth-hook "${MYSELF}" \
+#        --preferred-challenge dns \
+#        --config-dir "${PWD}/letsencrypt" \
+#        --work-dir "${PWD}/letsencrypt" \
+#        --logs-dir "${PWD}/letsencrypt" \
+#        --agree-tos \
+#        --manual-public-ip-logging-ok \
+#        --email mintteam@broadinstitute.org \
+#        --domains "${DOMAIN}"
 
 else
     echo "Reading CERTBOT_DOMAIN from file"
