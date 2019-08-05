@@ -50,6 +50,9 @@ kubectl apply -f ${CONFIG_DIR}/lira-service.yaml \
 if [[ "${GENERATE_CERTS}" == "true" ]];
 then
     sh "${DEPLOY_DIR}/generate_certs.sh"
+    if [[ $? = 1 ]]; then
+        exit 1
+    fi
 fi
 
 echo "Rendering TLS cert"
