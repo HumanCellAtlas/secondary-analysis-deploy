@@ -41,7 +41,7 @@ cd ..
 
 sudo chown -R jenkins certs
 
-if [ -f "certs/letsencrypt/archive/${DOMAIN}/fullchain1.pem" ];
+if [[ -f "certs/letsencrypt/archive/${DOMAIN}/fullchain1.pem" ]];
 then
     FULLCHAIN_VAULT_DIR="certs/letsencrypt/archive/${DOMAIN}/fullchain1.pem"
     echo "Writing fullchain to vault at ${FULLCHAIN_VAULT_DIR}"
@@ -55,7 +55,7 @@ else
     echo "Fullchain file doesn't exist. Skipping..."
 fi
 
-if [ -f "certs/letsencrypt/archive/${DOMAIN}/privkey1.pem" ];
+if [[ -f "certs/letsencrypt/archive/${DOMAIN}/privkey1.pem" ]];
 then
     PRIVKEY_VAULT_DIR="certs/letsencrypt/archive/${DOMAIN}/privkey1.pem"
     echo "Writing privkey to vault at ${PRIVKEY_VAULT_DIR}"
@@ -69,7 +69,7 @@ else
     echo "Private key file doesn't exist. Skipping..."
 fi
 
-if [ -f "certs/letsencrypt/archive/${DOMAIN}/chain1.pem" ];
+if [[ -f "certs/letsencrypt/archive/${DOMAIN}/chain1.pem" ]];
 then
     CHAIN_VAULT_DIR="certs/letsencrypt/archive/${DOMAIN}/chain1.pem"
     echo "Writing chain to vault at ${CHAIN_VAULT_DIR}"
@@ -83,7 +83,7 @@ else
     echo "Chain file doesn't exist. Skipping..."
 fi
 
-if [ -f "certs/letsencrypt/archive/${DOMAIN}/cert1.pem" ];
+if [[ -f "certs/letsencrypt/archive/${DOMAIN}/cert1.pem" ]];
 then
     CERT_VAULT_DIR="certs/letsencrypt/archive/${DOMAIN}/cert1.pem"
     echo "Writing cert to vault at ${CERT_VAULT_DIR}"

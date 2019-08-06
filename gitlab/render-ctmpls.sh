@@ -22,7 +22,7 @@ usage() {
 }
 
 error_out() {
-    if [ $1 -ne 0 ]; then
+    if [[ $1 -ne 0 ]]; then
         echo
         echo "${2}"
         exit $1
@@ -56,10 +56,10 @@ get_vault_token(){
     echo "Getting Vault Token..."
 
     # Check if the vault token is not set or is an empty string.
-    if [ -z "${VAULT_TOKEN}" ]; then
+    if [[ -z "${VAULT_TOKEN}" ]]; then
 
         # If the vault token is not set, check to see if it is in a file
-        if [ -r "${VAULT_TOKEN_PATH}" ]; then
+        if [[ -r "${VAULT_TOKEN_PATH}" ]]; then
             VAULT_TOKEN="$(cat ${VAULT_TOKEN_PATH})"
 
         # If the vault token is not set and there is no vault token file, then exit
@@ -92,7 +92,7 @@ clean_base64_file() {
     extension2="${output##*.}"
 
     # Get final file name and clean file by removing \n
-    if [ "${extension2}" == "b64" ]
+    if [[ "${extension2}" == "b64" ]]
     then
         final_file="${output%.*}"
 
@@ -114,7 +114,7 @@ render_file() {
         echo "Processing ${file}..."
 
         # check if it is a file
-        if [ ! -r "${file}" ]
+        if [[ ! -r "${file}" ]]
         then
             # skip non-regular files
             echo "ERROR: specified file is not a regular file: (${file}) - Exiting"
@@ -147,7 +147,7 @@ do_files_require_vault_token() {
     # assume rest of args are files
     for file in ${FILES_TO_RENDER}
     do
-        if [ ! -r "${file}" ]
+        if [[ ! -r "${file}" ]]
         then
             echo "ERROR: specified file is not a regular file: (${file}) - Exiting"
             exit 1
@@ -173,7 +173,7 @@ test ! -z "${WORK_DIR}" && test -d "${WORK_DIR}" && cd "${WORK_DIR}"
 do_files_need_vault=$(do_files_require_vault_token)
 echo "DO FILES NEED VAULT: ${do_files_need_vault}"
 
-if [ "${do_files_need_vault}" == "true" ]
+if [[ "${do_files_need_vault}" == "true" ]]
 then
     echo "VAULT TOKEN REQUIRED"
     get_vault_token
