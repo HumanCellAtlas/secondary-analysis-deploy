@@ -23,15 +23,15 @@ SINK_NAME=${SINK_NAME:-""}
 DESTINATION=${DESTINATION:-""}
 
 ERROR=0
-if [ -z "${SINK_NAME}" ]; then
+if [[ -z "${SINK_NAME}" ]]; then
   printf "\nYou must provide a sink name\n"
   ERROR=1
 fi
-if [ -z "${DESTINATION}" ]; then
+if [[ -z "${DESTINATION}" ]]; then
   printf "\nYou must provide a DESTINATION\n"
   ERROR=1
 fi
-if [ "${ERROR}" -eq 1 ]; then
+if [[ "${ERROR}" -eq 1 ]]; then
   printf "\nUsage: bash create-logging-sink.sh SINK_NAME DESTINATION\n\n"
   exit 1
 fi

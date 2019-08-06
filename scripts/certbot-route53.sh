@@ -9,23 +9,38 @@
 MYSELF="$(cd "$(dirname "$0")" && pwd)/$(basename "$0")"
 
 # Check that certbot domain exists. If not, then create letsencrypt directory and make the cert challenge
-if [ -z "${CERTBOT_DOMAIN}" ]; then
+if [[ -z "${CERTBOT_DOMAIN}" ]]; then
 
     mkdir -p "${PWD}/letsencrypt"
 
-    certbot certonly \
-        --non-interactive \
-        --manual \
-        --manual-auth-hook "${MYSELF}" \
-        --preferred-challenge dns \
-        --config-dir "${PWD}/letsencrypt" \
-        --work-dir "${PWD}/letsencrypt" \
-        --logs-dir "${PWD}/letsencrypt" \
-        --agree-tos \
-        --manual-public-ip-logging-ok \
-        --email mintteam@broadinstitute.org \
-        --domains "${DOMAIN}" \
-        --dry-run
+    if [[ "${TLS_CREATION_DRY_RUN}" == "true" ]]; then
+        certbot certonly \
+            --non-interactive \
+            --manual \
+            --manual-auth-hook "${MYSELF}" \
+            --preferred-challenge dns \
+            --config-dir "${PWD}/letsencrypt" \
+            --work-dir "${PWD}/letsencrypt" \
+            --logs-dir "${PWD}/letsencrypt" \
+            --agree-tos \
+            --manual-public-ip-logging-ok \
+            --email mintteam@broadinstitute.org \
+            --domains "${DOMAIN}" \
+            --dry-run
+    else
+        certbot certonly \
+            --non-interactive \
+            --manual \
+            --manual-auth-hook "${MYSELF}" \
+            --preferred-challenge dns \
+            --config-dir "${PWD}/letsencrypt" \
+            --work-dir "${PWD}/letsencrypt" \
+            --logs-dir "${PWD}/letsencrypt" \
+            --agree-tos \
+            --manual-public-ip-logging-ok \
+            --email mintteam@broadinstitute.org \
+            --domains "${DOMAIN}"
+    fi
 
 else
     echo "Reading CERTBOT_DOMAIN from file"
@@ -39,7 +54,7 @@ else
 
     HOSTED_ZONE_ID="$(aws route53 list-hosted-zones --query "${QUERY}" --output text)"
 
-    if [ -z "${HOSTED_ZONE_ID}" ]; then
+    if [[ -z "${HOSTED_ZONE_ID}" ]]; then
         # CERTBOT_DOMAIN is a hostname, not a domain (zone)
         # We strip out the hostname part to leave only the domain
         DOMAIN="$(echo "${CERTBOT_DOMAIN:?}" | sed -r 's/^[^.]+.(.*)$/\1/')"
@@ -49,8 +64,8 @@ else
         HOSTED_ZONE_ID="$(aws route53 list-hosted-zones --query "${QUERY}" --output text)"
     fi
 
-    if [ -z "${HOSTED_ZONE_ID}" ]; then
-        if [ -n "${DOMAIN}" ]; then
+    if [[ -z "${HOSTED_ZONE_ID}" ]]; then
+        if [[ -n "${DOMAIN}" ]]; then
           echo "No hosted zone found that matches domain ${DOMAIN} or hostname ${CERTBOT_DOMAIN}"
         else
           echo "No hosted zone found that matches ${CERTBOT_DOMAIN}"

@@ -5,6 +5,7 @@
 export COLLECTION_NAME="lira-int"
 
 export GENERATE_CERTS="true"
+export TLS_CREATION_DRY_RUN="false"
 
 export SS2_SUBSCRIPTION_ID="8f8770e3-94f6-400e-8a12-452b84b9160d"
 
