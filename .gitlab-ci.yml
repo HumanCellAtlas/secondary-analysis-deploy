@@ -8,7 +8,7 @@ deploy_lira_dev:
     - green
   stage: deploy
   script:
-    - export ENVIRONMENT=dev
+    - export ENVIRONMENT=integration
     - bash gitlab/deploy_lira.sh
 
 deploy_falcon_dev:
@@ -16,5 +16,5 @@ deploy_falcon_dev:
     - green
   stage: deploy
   script:
-    - export ENVIRONMENT=dev
+    - export ENVIRONMENT=integration
     - bash gitlab/deploy_falcon.sh
