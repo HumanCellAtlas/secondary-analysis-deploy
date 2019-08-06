@@ -58,7 +58,7 @@ docker run -i --rm \
               -k "${DOCKER_CONFIG_DIR}/${FALCON_CONFIG_FILE}.ctmpl"
 
 echo "Deploying falcon config file"
-if [ "${USE_CAAS}" == "true" ];
+if [[ "${USE_CAAS}" == "true" ]];
 then
     kubectl create secret generic "${FALCON_CONFIG_SECRET_NAME}" \
             --from-file=config="${CONFIG_DIR}/${FALCON_CONFIG_FILE}" \
