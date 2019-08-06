@@ -7,7 +7,7 @@
 # Variables
 LIRA_ENVIRONMENT=${LIRA_ENVIRONMENT:-""}
 GCLOUD_PROJECT=${GCLOUD_PROJECT:-"broad-dsde-mint-${LIRA_ENVIRONMENT}"}
-if [ ${LIRA_ENVIRONMENT} == "prod" ];
+if [[ ${LIRA_ENVIRONMENT} == "prod" ]];
 then
     GCLOUD_PROJECT="hca-dcp-pipelines-prod"
 fi
@@ -16,17 +16,17 @@ SERVICE="lira"
 VAULT_TOKEN_PATH=${VAULT_TOKEN_PATH:-"${HOME}/.vault-token"}
 
 # Derived variables
-if [ ${LIRA_ENVIRONMENT} == "test" ];
+if [[ ${LIRA_ENVIRONMENT} == "test" ]];
 then
     ENV="integration"
-elif [ ${LIRA_ENVIRONMENT} == "dev" ];
+elif [[ ${LIRA_ENVIRONMENT} == "dev" ]];
 then
     ENV="integration"
 else
     ENV="${LIRA_ENVIRONMENT}"
 fi
 
-if [ ${LIRA_ENVIRONMENT} == "prod" ]
+if [[ ${LIRA_ENVIRONMENT} == "prod" ]]
 then
     DSS_URL="https://dss.data.humancellatlas.org/v1"
     LIRA_URL="https://pipelines.data.humancellatlas.org/notifications"
