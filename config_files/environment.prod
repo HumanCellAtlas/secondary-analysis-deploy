@@ -4,11 +4,12 @@
 
 export COLLECTION_NAME="lira-${ENVIRONMENT}"
 
-export GENERATE_CERTS="false"
+export GENERATE_CERTS="true"
+export TLS_CREATION_DRY_RUN="false"
 
-export SS2_SUBSCRIPTION_ID="e83bce2b-bd78-4ef3-b9d2-f1d81f6bac11"
+export SS2_SUBSCRIPTION_ID="ca47c9df-f971-4c18-9f52-2d5408113a9b"
 export TENX_SUBSCRIPTION_ID="placeholder_10x_subscription_id"
-export OPTIMUS_SUBSCRIPTION_ID="2a6b17f0-8f99-42eb-a4b1-c4bfcd45de57"
+export OPTIMUS_SUBSCRIPTION_ID="a882fc3a-a9e5-44a1-9550-e2573d2cc9b8"
 
 export GCLOUD_PROJECT="hca-dcp-pipelines-prod"
 

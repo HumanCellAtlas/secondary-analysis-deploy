@@ -20,15 +20,15 @@ VAULT_TOKEN_PATH=${VAULT_TOKEN_PATH:-"${HOME}/.vault-token"}
 FIRECLOUD_USER_GROUP_NAME=${FIRECLOUD_USER_GROUP_NAME:-"mint-${LIRA_ENVIRONMENT}-write-access"}
 FIRECLOUD_API_URL=${FIRECLOUD_API_URL:-"https://firecloud-orchestration.dsde-${FIRECLOUD_ENVIRONMENT}.broadinstitute.org"}
 
-if [ "${FIRECLOUD_ENVIRONMENT}" == "prod" ];
+if [[ "${FIRECLOUD_ENVIRONMENT}" == "prod" ]];
 then
     FIRECLOUD_API_URL="https://api.firecloud.org"
 fi
 
-if [ "${LIRA_ENVIRONMENT}" == "integration" ];
+if [[ "${LIRA_ENVIRONMENT}" == "integration" ]];
 then
     ENV="int"
-elif [ "${LIRA_ENVIRONMENT}" == "prod" ];
+elif [[ "${LIRA_ENVIRONMENT}" == "prod" ]];
 then
     ENV="hca-prod"
 else
