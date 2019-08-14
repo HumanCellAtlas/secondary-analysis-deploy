@@ -7,7 +7,7 @@ export COLLECTION_NAME="lira-${ENVIRONMENT}"
 export GENERATE_CERTS="true"
 export TLS_CREATION_DRY_RUN="false"
 
-export SS2_SUBSCRIPTION_ID="fa07303d-8063-4582-89f4-6ba7aae1852f"
+export SS2_SUBSCRIPTION_ID="a8ba80d5-ac59-4c02-baa2-e2eab5b3c71d"
 export TENX_SUBSCRIPTION_ID="placeholder_10x_subscription_id"
 export OPTIMUS_SUBSCRIPTION_ID="placeholder_optimus_subscription_id"
 
