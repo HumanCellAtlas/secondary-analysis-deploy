@@ -13,7 +13,6 @@ deploy_lira:
   only:
     refs:
       - dev
-      - test
       - integration
       - staging
   tags:
@@ -27,7 +26,6 @@ deploy_falcon:
   only:
     refs:
       - dev
-      - test
       - integration
       - staging
   tags:
