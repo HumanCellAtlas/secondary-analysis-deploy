@@ -18,7 +18,6 @@ export TENX_VERSION="cellranger_v1.0.2"
 
 export OPTIMUS_VERSION="optimus_v1.3.3"
 
-
 # Cromwell Variables
 
 export USE_CAAS=true
