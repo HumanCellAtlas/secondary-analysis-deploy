@@ -7,10 +7,10 @@ export COLLECTION_NAME="lira-int"
 export GENERATE_CERTS="true"
 export TLS_CREATION_DRY_RUN="false"
 
-export SS2_SUBSCRIPTION_ID="62ff544c-9c1c-47b2-b8b8-5ec92cf11128"
+export SS2_SUBSCRIPTION_ID="4cf2d60a-c6fc-44c9-a974-788eaaf07ec7"
 
 export TENX_SUBSCRIPTION_ID="placeholder_10x_subscription_id"
-export OPTIMUS_SUBSCRIPTION_ID="24d2f1dd-3f0c-4b07-87b3-683d39da87c8"
+export OPTIMUS_SUBSCRIPTION_ID="6e5525d8-40ad-4db4-b38b-e2a0f5ffcf4f"
 
 export GCLOUD_PROJECT="broad-dsde-mint-integration"
 
