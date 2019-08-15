@@ -8,7 +8,7 @@ source "${CONFIG_DIR}/environment.${ENVIRONMENT}"
 
 export PIPELINE_TOOLS_VERSION="v0.56.1"
 
-export LIRA_VERSION="se-test-pipeline-tools-changes"
+export LIRA_VERSION="v0.20.0"
 
 export FALCON_VERSION="v0.4.1"
 
