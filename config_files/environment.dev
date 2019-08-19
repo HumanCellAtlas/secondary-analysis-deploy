@@ -12,6 +12,7 @@ export TENX_SUBSCRIPTION_ID="placeholder_10x_subscription_id"
 export OPTIMUS_SUBSCRIPTION_ID="placeholder_optimus_subscription_id"
 
 export GCLOUD_PROJECT="broad-dsde-mint-dev"
+export GOOGLE_PUB_SUB_TOPIC="hca-notifications-${ENVIRONMENT}"
 
 export DSS_URL="https://dss.dev.data.humancellatlas.org/v1"
 export SCHEMA_URL="https://schema.dev.data.humancellatlas.org/"
