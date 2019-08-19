@@ -5,7 +5,6 @@
     "cromwell_url": "{{env "CROMWELL_URL"}}",
 {{ if env "USE_CAAS" | parseBool }}
     "collection_name": "{{ env "COLLECTION_NAME" }}",
-    "google_project": "{{ env "GCLOUD_PROJECT" }}",
     "gcs_root": "{{ env "GCS_ROOT" }}",
 {{ else }}
 {{ with $cromwellSecrets := vault (printf "secret/dsde/mint/%s/common/htpasswd" $ENVIRONMENT) }}
@@ -19,6 +18,8 @@
     "use_caas": {{ env "USE_CAAS" | parseBool }},
     "submit_and_hold": {{ env "SUBMIT_AND_HOLD" | parseBool }},
     "env": "{{ $ENVIRONMENT }}",
+    "google_project": "{{ env "GCLOUD_PROJECT" }}",
+    "google_pubsub_topic": "{{ env "GOOGLE_PUB_SUB_TOPIC" }}",
     "dss_url": "{{ env "DSS_URL" }}",
     "schema_url": "{{ env "SCHEMA_URL" }}",
     "ingest_url": "{{ env "INGEST_URL" }}",
