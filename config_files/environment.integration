@@ -8,11 +8,11 @@ export GENERATE_CERTS="true"
 export TLS_CREATION_DRY_RUN="false"
 
 export SS2_SUBSCRIPTION_ID="ea3c9be2-3a12-4870-85fd-1dff2d0001c1"
-
 export TENX_SUBSCRIPTION_ID="placeholder_10x_subscription_id"
 export OPTIMUS_SUBSCRIPTION_ID="391d49a6-382f-4b2c-8827-25a344a7f8c0"
 
 export GCLOUD_PROJECT="broad-dsde-mint-integration"
+export GOOGLE_PUBSUB_TOPIC="hca-notifications-${ENVIRONMENT}"
 
 export DSS_URL="https://dss.integration.data.humancellatlas.org/v1"
 export SCHEMA_URL="https://schema.integration.data.humancellatlas.org/"

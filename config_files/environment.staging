@@ -12,6 +12,7 @@ export TENX_SUBSCRIPTION_ID="placeholder_10x_subscription_id"
 export OPTIMUS_SUBSCRIPTION_ID="29e566a9-a425-4a43-a144-ea8429d0f5ba"
 
 export GCLOUD_PROJECT="broad-dsde-mint-staging"
+export GOOGLE_PUBSUB_TOPIC="hca-notifications-${ENVIRONMENT}"
 
 export DSS_URL="https://dss.staging.data.humancellatlas.org/v1"
 export SCHEMA_URL="https://schema.staging.data.humancellatlas.org/"
