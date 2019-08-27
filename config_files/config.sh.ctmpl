@@ -8,9 +8,9 @@ source "${CONFIG_DIR}/environment.${ENVIRONMENT}"
 
 export PIPELINE_TOOLS_VERSION="v0.56.1"
 
-export LIRA_VERSION="se-check-for-existing-workflows"
+export LIRA_VERSION="v0.22.0"
 
-export FALCON_VERSION="v0.4.1"
+export FALCON_VERSION="v0.4.2"
 
 export SS2_VERSION="smartseq2_v2.4.0"
 
