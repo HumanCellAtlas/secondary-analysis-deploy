@@ -12,6 +12,7 @@ export TENX_SUBSCRIPTION_ID="placeholder_10x_subscription_id"
 export OPTIMUS_SUBSCRIPTION_ID="a882fc3a-a9e5-44a1-9550-e2573d2cc9b8"
 
 export GCLOUD_PROJECT="hca-dcp-pipelines-prod"
+export GOOGLE_PUBSUB_TOPIC="hca-notifications-${ENVIRONMENT}"
 
 export DSS_URL="https://dss.data.humancellatlas.org/v1"
 export SCHEMA_URL="https://schema.humancellatlas.org/"
