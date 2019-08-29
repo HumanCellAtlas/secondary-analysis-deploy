@@ -10,7 +10,7 @@ export PIPELINE_TOOLS_VERSION="v0.56.3"
 
 export LIRA_VERSION="v0.22.1"
 
-export FALCON_VERSION="v0.4.2"
+export FALCON_VERSION="v0.4.1"
 
 export SS2_VERSION="smartseq2_v2.4.0"
 
