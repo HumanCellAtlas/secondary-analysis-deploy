@@ -6,11 +6,11 @@
 
 source "${CONFIG_DIR}/environment.${ENVIRONMENT}"
 
-export PIPELINE_TOOLS_VERSION="v0.56.3"
+export PIPELINE_TOOLS_VERSION="v0.56.4"
 
 export LIRA_VERSION="v0.22.1"
 
-export FALCON_VERSION="v0.4.1"
+export FALCON_VERSION="v0.4.3"
 
 export SS2_VERSION="smartseq2_v2.4.0"
 
