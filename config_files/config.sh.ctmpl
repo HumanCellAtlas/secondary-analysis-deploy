@@ -53,6 +53,7 @@ export GCS_ROOT="gs://${GCLOUD_PROJECT}-cromwell-execution/caas-cromwell-executi
 export USE_HMAC=true
 export SUBMIT_WDL_DIR=""
 export SUBMIT_AND_HOLD=true
+export TEST_MODE=false
 
 export CAAS_KEY_PATH="secret/dsde/mint/${ENVIRONMENT}/${LIRA_APPLICATION_NAME}/${CAAS_KEY_FILE}"
 
