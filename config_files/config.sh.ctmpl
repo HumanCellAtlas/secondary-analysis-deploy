@@ -6,17 +6,17 @@
 
 source "${CONFIG_DIR}/environment.${ENVIRONMENT}"
 
-export PIPELINE_TOOLS_VERSION="v0.56.1"
+export PIPELINE_TOOLS_VERSION="v0.56.6"
 
-export LIRA_VERSION="v0.20.0"
+export LIRA_VERSION="v0.22.1"
 
-export FALCON_VERSION="v0.4.1"
+export FALCON_VERSION="v0.4.3"
 
 export SS2_VERSION="smartseq2_v2.4.0"
 
 export TENX_VERSION="cellranger_v1.0.2"
 
-export OPTIMUS_VERSION="optimus_v1.3.3"
+export OPTIMUS_VERSION="optimus_v1.3.5"
 
 # Cromwell Variables
 
@@ -53,6 +53,7 @@ export GCS_ROOT="gs://${GCLOUD_PROJECT}-cromwell-execution/caas-cromwell-executi
 export USE_HMAC=true
 export SUBMIT_WDL_DIR=""
 export SUBMIT_AND_HOLD=true
+export TEST_MODE=false
 
 export CAAS_KEY_PATH="secret/dsde/mint/${ENVIRONMENT}/${LIRA_APPLICATION_NAME}/${CAAS_KEY_FILE}"
 
