@@ -7,9 +7,9 @@ export COLLECTION_NAME="lira-${ENVIRONMENT}"
 export GENERATE_CERTS="true"
 export TLS_CREATION_DRY_RUN="false"
 
-export SS2_SUBSCRIPTION_ID="ca47c9df-f971-4c18-9f52-2d5408113a9b"
+export SS2_SUBSCRIPTION_ID="a279244c-8fac-494b-aa45-7c1c068ae927"
 export TENX_SUBSCRIPTION_ID="placeholder_10x_subscription_id"
-export OPTIMUS_SUBSCRIPTION_ID="a882fc3a-a9e5-44a1-9550-e2573d2cc9b8"
+export OPTIMUS_SUBSCRIPTION_ID="f081e314-c6d7-4138-8faa-aac2bb73cfd8"
 
 export GCLOUD_PROJECT="hca-dcp-pipelines-prod"
 export GOOGLE_PUBSUB_TOPIC="hca-notifications-${ENVIRONMENT}"
