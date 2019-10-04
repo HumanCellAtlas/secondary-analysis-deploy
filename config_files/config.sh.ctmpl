@@ -46,7 +46,6 @@ export LIRA_INGRESS_NAME="lira-ingress"
 export LIRA_CONFIG_FILE="lira-config.json"
 export LIRA_CONFIG_SECRET_NAME="lira-config-$(date '+%Y-%m-%d-%H-%M-%S')"
 export LIRA_DEPLOYMENT_YAML="lira-deployment.yaml"
-
 export LIRA_DOCKER_IMAGE="quay.io/humancellatlas/secondary-analysis-lira:${LIRA_VERSION}"
 export GCS_ROOT="gs://${GCLOUD_PROJECT}-cromwell-execution/caas-cromwell-executions"
 
