@@ -145,9 +145,9 @@ kubectl apply -f "${CONFIG_DIR}/${LIRA_DEPLOYMENT_YAML}" \
 echo "Generating Lira autoscaler file"
 sh "${DEPLOY_DIR}/render-ctmpls.sh" -k "${CONFIG_DIR}/lira-autoscaler.yaml.ctmpl"
 
-cat "${CONFIG_DIR}/lira-autoscaler.yaml.ctmpl"
+cat "${CONFIG_DIR}/lira-autoscaler.yaml"
 
 echo "Updating Lira autoscaler"
-kubectl apply -f "${CONFIG_DIR}/lira-autoscaler.yaml.ctmpl" \
+kubectl apply -f "${CONFIG_DIR}/lira-autoscaler.yaml" \
               --record \
               --namespace "${KUBERNETES_NAMESPACE}"
