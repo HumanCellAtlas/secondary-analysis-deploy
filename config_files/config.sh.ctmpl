@@ -37,7 +37,6 @@ export KUBERNETES_ZONE="us-central1-a"
 
 # Lira Variables
 
-export LIRA_NUMBER_OF_REPLICAS="3"
 export LIRA_APPLICATION_NAME="lira"
 export LIRA_DEPLOYMENT_NAME="lira"
 export LIRA_CONTAINER_NAME="lira"
@@ -47,6 +46,7 @@ export LIRA_INGRESS_NAME="lira-ingress"
 export LIRA_CONFIG_FILE="lira-config.json"
 export LIRA_CONFIG_SECRET_NAME="lira-config-$(date '+%Y-%m-%d-%H-%M-%S')"
 export LIRA_DEPLOYMENT_YAML="lira-deployment.yaml"
+
 export LIRA_DOCKER_IMAGE="quay.io/humancellatlas/secondary-analysis-lira:${LIRA_VERSION}"
 export GCS_ROOT="gs://${GCLOUD_PROJECT}-cromwell-execution/caas-cromwell-executions"
 
@@ -56,6 +56,13 @@ export SUBMIT_AND_HOLD=true
 export TEST_MODE=false
 
 export CAAS_KEY_PATH="secret/dsde/mint/${ENVIRONMENT}/${LIRA_APPLICATION_NAME}/${CAAS_KEY_FILE}"
+
+# Lira Autoscaling Variables
+export LIRA_AUTOSCALER_NAME="lira-autoscaler"
+export LIRA_MIN_REPLICAS="2"
+export LIRA_MAX_REPLICAS="6"
+export LIRA_PERCENT_TARGET_CPU_USAGE=75"
+
 
 # Falcon Variables
 
