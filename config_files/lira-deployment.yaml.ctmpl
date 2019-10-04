@@ -37,9 +37,9 @@ spec:
                   timeoutSeconds: 5
                   successThreshold: 1
                   failureThreshold: 10
-            resources:
-                requests:
-                    cpu: "1"
+              resources:
+                  requests:
+                      cpu: "1"
             terminationGracePeriodSeconds: 0
             volumes:
                 - name: lira-config
