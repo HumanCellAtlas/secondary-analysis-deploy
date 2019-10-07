@@ -60,7 +60,7 @@ export CAAS_KEY_PATH="secret/dsde/mint/${ENVIRONMENT}/${LIRA_APPLICATION_NAME}/$
 export LIRA_AUTOSCALER_NAME="lira-autoscaler"
 export LIRA_MIN_REPLICAS="2"
 export LIRA_MAX_REPLICAS="6"
-export LIRA_PERCENT_TARGET_CPU_USAGE=75"
+export LIRA_PERCENT_TARGET_CPU_USAGE="75"
 
 
 # Falcon Variables
