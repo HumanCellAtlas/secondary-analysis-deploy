@@ -1,0 +1,12 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: {{ env "LIRA_AUTOSCALER_NAME" }}
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: {{ env "LIRA_DEPLOYMENT_NAME" }}
+  minReplicas: {{ env "LIRA_MIN_REPLICAS" }}
+  maxReplicas: {{ env "LIRA_MAX_REPLICAS" }}
+  targetCPUUtilizationPercentage: {{ env "LIRA_PERCENT_TARGET_CPU_USAGE" }}
