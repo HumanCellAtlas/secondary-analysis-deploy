@@ -6,9 +6,9 @@
 
 source "${CONFIG_DIR}/environment.${ENVIRONMENT}"
 
-export PIPELINE_TOOLS_VERSION="v0.56.6"
+export ADAPTER_PIPELINES_VERSION="v1.1.0"
 
-export LIRA_VERSION="v0.22.1"
+export LIRA_VERSION="v0.22.3"
 
 export FALCON_VERSION="v0.4.3"
 
@@ -37,7 +37,6 @@ export KUBERNETES_ZONE="us-central1-a"
 
 # Lira Variables
 
-export LIRA_NUMBER_OF_REPLICAS="3"
 export LIRA_APPLICATION_NAME="lira"
 export LIRA_DEPLOYMENT_NAME="lira"
 export LIRA_CONTAINER_NAME="lira"
@@ -57,6 +56,13 @@ export TEST_MODE=false
 
 export CAAS_KEY_PATH="secret/dsde/mint/${ENVIRONMENT}/${LIRA_APPLICATION_NAME}/${CAAS_KEY_FILE}"
 
+# Lira Autoscaling Variables
+export LIRA_AUTOSCALER_NAME="lira-autoscaler"
+export LIRA_MIN_REPLICAS="2"
+export LIRA_MAX_REPLICAS="6"
+export LIRA_PERCENT_TARGET_CPU_USAGE="75"
+
+
 # Falcon Variables
 
 export FALCON_NUMBER_OF_REPLICAS="1"
@@ -71,15 +77,15 @@ export FALCON_QUEUE_UPDATE_INTERVAL="60"
 export FALCON_WORKFLOW_START_INTERVAL="3"
 
 
-# Pipeline tools
+# Adapter Pipelines
 
-export PIPELINE_TOOLS_PREFIX="https://raw.githubusercontent.com/HumanCellAtlas/pipeline-tools/${PIPELINE_TOOLS_VERSION}"
+export ADAPTER_PIPELINES_PREFIX="https://raw.githubusercontent.com/HumanCellAtlas/adapter-pipelines/${ADAPTER_PIPELINES_VERSION}"
 
 if [ -n "${SUBMIT_WDL_DIR}" ];
 then
-    export SUBMIT_WDL="${PIPELINE_TOOLS_PREFIX}/adapter_pipelines/${SUBMIT_WDL_DIR}/submit.wdl"
+    export SUBMIT_WDL="${ADAPTER_PIPELINES_PREFIX}/shared/${SUBMIT_WDL_DIR}/submit.wdl"
 else
-    export SUBMIT_WDL="${PIPELINE_TOOLS_PREFIX}/adapter_pipelines/submit.wdl"
+    export SUBMIT_WDL="${ADAPTER_PIPELINES_PREFIX}/shared/submit/submit.wdl"
 fi
 
 
@@ -100,9 +106,9 @@ export SS2_ANALYSIS_WDLS="[
                 \"${SS2_PREFIX}/library/tasks/GroupMetricsOutputs.wdl\",
                 \"${SS2_PREFIX}/library/tasks/ZarrUtils.wdl\"
             ]"
-export SS2_OPTIONS_LINK="${PIPELINE_TOOLS_PREFIX}/adapter_pipelines/ss2_single_sample/options.json"
-export SS2_WDL_STATIC_INPUTS_LINK="${PIPELINE_TOOLS_PREFIX}/adapter_pipelines/ss2_single_sample/adapter_example_static.json"
-export SS2_WDL_LINK="${PIPELINE_TOOLS_PREFIX}/adapter_pipelines/ss2_single_sample/adapter.wdl"
+export SS2_OPTIONS_LINK="${ADAPTER_PIPELINES_PREFIX}/pipelines/ss2_single_sample/options.json"
+export SS2_WDL_STATIC_INPUTS_LINK="${ADAPTER_PIPELINES_PREFIX}/pipelines/ss2_single_sample/static_inputs.json"
+export SS2_WDL_LINK="${ADAPTER_PIPELINES_PREFIX}/pipelines/ss2_single_sample/adapter.wdl"
 export SS2_WORKFLOW_NAME="AdapterSmartSeq2SingleCell"
 
 
@@ -112,9 +118,9 @@ export TENX_PREFIX="https://raw.githubusercontent.com/HumanCellAtlas/skylab/${TE
 export TENX_ANALYSIS_WDLS="[
                 \"${TENX_PREFIX}/pipelines/cellranger/cellranger.wdl\"
             ]"
-export TENX_OPTIONS_LINK="${PIPELINE_TOOLS_PREFIX}/adapter_pipelines/cellranger/options.json"
-export TENX_WDL_STATIC_INPUTS_LINK="${PIPELINE_TOOLS_PREFIX}/adapter_pipelines/cellranger/adapter_example_static.json"
-export TENX_WDL_LINK="${PIPELINE_TOOLS_PREFIX}/adapter_pipelines/cellranger/adapter.wdl"
+export TENX_OPTIONS_LINK="${ADAPTER_PIPELINES_PREFIX}/pipelines/cellranger/options.json"
+export TENX_WDL_STATIC_INPUTS_LINK="${ADAPTER_PIPELINES_PREFIX}/pipelines/cellranger/static_inputs.json"
+export TENX_WDL_LINK="${ADAPTER_PIPELINES_PREFIX}/pipelines/cellranger/adapter.wdl"
 export TENX_WORKFLOW_NAME="Adapter10xCount"
 
 
@@ -141,7 +147,7 @@ export OPTIMUS_ANALYSIS_WDLS="[
                     \"${OPTIMUS_PREFIX}/library/tasks/ModifyGtf.wdl\"
                 ]"
 
-export OPTIMUS_OPTIONS_LINK="${PIPELINE_TOOLS_PREFIX}/adapter_pipelines/Optimus/options.json"
-export OPTIMUS_WDL_STATIC_INPUTS_LINK="${PIPELINE_TOOLS_PREFIX}/adapter_pipelines/Optimus/adapter_example_static.json"
-export OPTIMUS_WDL_LINK="${PIPELINE_TOOLS_PREFIX}/adapter_pipelines/Optimus/adapter.wdl"
+export OPTIMUS_OPTIONS_LINK="${ADAPTER_PIPELINES_PREFIX}/pipelines/optimus/options.json"
+export OPTIMUS_WDL_STATIC_INPUTS_LINK="${ADAPTER_PIPELINES_PREFIX}/pipelines/optimus/static_inputs.json"
+export OPTIMUS_WDL_LINK="${ADAPTER_PIPELINES_PREFIX}/pipelines/optimus/adapter.wdl"
 export OPTIMUS_WORKFLOW_NAME="AdapterOptimus"
