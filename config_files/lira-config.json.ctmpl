@@ -30,7 +30,7 @@
     "notification_token": "{{ $liraSecret.Data.notification_token }}",
 {{ end }}
     "max_cromwell_retries": "{{ env "MAX_CROMWELL_RETRIES" }}",
-    "monitoring_image": "{{ env "MONITORING_IMAGE" }}",
+    "monitoring_image": "{{ or (env "MONITORING_IMAGE") null }}",
     "submit_wdl": "{{ env "SUBMIT_WDL" }}",
     "wdls": [
         {
