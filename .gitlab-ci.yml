@@ -15,9 +15,10 @@ deploy_lira:
       - dev
       - integration
       - staging
+      - prod
   tags:
     - green
-  when: always
+  when: manual
 
 deploy_falcon:
   stage: deploy
@@ -28,6 +29,7 @@ deploy_falcon:
       - dev
       - integration
       - staging
+      - prod
   tags:
     - green
-  when: always
+  when: manual
