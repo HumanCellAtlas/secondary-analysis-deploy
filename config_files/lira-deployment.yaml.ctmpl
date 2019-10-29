@@ -3,7 +3,6 @@ kind: Deployment
 metadata:
     name: {{ env "LIRA_DEPLOYMENT_NAME" }}
 spec:
-    replicas: {{ env "LIRA_NUMBER_OF_REPLICAS" }}
     template:
         metadata:
             labels:
@@ -38,7 +37,9 @@ spec:
                   timeoutSeconds: 5
                   successThreshold: 1
                   failureThreshold: 10
-
+              resources:
+                  requests:
+                      cpu: "0.25"
             terminationGracePeriodSeconds: 0
             volumes:
                 - name: lira-config

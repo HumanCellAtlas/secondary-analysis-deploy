@@ -16,5 +16,5 @@ export GOOGLE_PUBSUB_TOPIC="hca-notifications-${ENVIRONMENT}"
 
 export DSS_URL="https://dss.dev.data.humancellatlas.org/v1"
 export SCHEMA_URL="https://schema.dev.data.humancellatlas.org/"
-export INGEST_URL="https://api.dev.integration.data.humancellatlas.org/"
+export INGEST_URL="https://api.ingest.dev.data.humancellatlas.org/"
 export DOMAIN="pipelines.dev.data.humancellatlas.org"
