@@ -18,7 +18,7 @@ deploy_lira:
       - prod
   tags:
     - green
-  when: manual
+  when: always
 
 deploy_falcon:
   stage: deploy
@@ -32,4 +32,4 @@ deploy_falcon:
       - prod
   tags:
     - green
-  when: manual
+  when: always
