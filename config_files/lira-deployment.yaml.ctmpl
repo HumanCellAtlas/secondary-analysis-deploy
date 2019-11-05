@@ -40,6 +40,7 @@ spec:
               resources:
                   requests:
                       cpu: "0.25"
+                      memory: "1G"
             terminationGracePeriodSeconds: 0
             volumes:
                 - name: lira-config

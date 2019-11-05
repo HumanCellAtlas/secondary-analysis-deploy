@@ -13,6 +13,7 @@ export OPTIMUS_SUBSCRIPTION_ID="65dc209f-99e8-449c-89c9-c37ac9921648"
 
 export GCLOUD_PROJECT="broad-dsde-mint-integration"
 export GOOGLE_PUBSUB_TOPIC="hca-notifications-${ENVIRONMENT}"
+export MONITORING_IMAGE="us.gcr.io/broad-dsde-mint-integration/cromwell-task-monitor-bq"
 
 export DSS_URL="https://dss.integration.data.humancellatlas.org/v1"
 export SCHEMA_URL="https://schema.integration.data.humancellatlas.org/"
