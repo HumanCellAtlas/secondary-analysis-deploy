@@ -15,6 +15,7 @@ deploy_lira:
       - dev
       - integration
       - staging
+      - prod
   tags:
     - green
   when: always
@@ -28,6 +29,7 @@ deploy_falcon:
       - dev
       - integration
       - staging
+      - prod
   tags:
     - green
   when: always
