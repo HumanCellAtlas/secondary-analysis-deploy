@@ -6,13 +6,13 @@
 
 source "${CONFIG_DIR}/environment.${ENVIRONMENT}"
 
-export ADAPTER_PIPELINES_VERSION="v1.1.0"
+export ADAPTER_PIPELINES_VERSION="v1.2.0"
 
-export LIRA_VERSION="v0.22.6"
+export LIRA_VERSION="v0.22.7"
 
 export FALCON_VERSION="v0.4.3"
 
-export SS2_VERSION="smartseq2_v2.4.0"
+export SS2_VERSION="smartseq2_v2.5.0"
 
 export TENX_VERSION="cellranger_v1.0.2"
 
