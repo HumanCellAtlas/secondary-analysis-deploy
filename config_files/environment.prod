@@ -13,6 +13,7 @@ export OPTIMUS_SUBSCRIPTION_ID="5f15f31d-4566-4d8b-92e8-9437be305a11"
 
 export GCLOUD_PROJECT="hca-dcp-pipelines-prod"
 export GOOGLE_PUBSUB_TOPIC="hca-notifications-${ENVIRONMENT}"
+export MONITORING_IMAGE="us.gcr.io/hca-dcp-pipelines-prod/cromwell-task-monitor-bq"
 
 export DSS_URL="https://dss.data.humancellatlas.org/v1"
 export SCHEMA_URL="https://schema.humancellatlas.org/"
