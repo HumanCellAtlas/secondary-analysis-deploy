@@ -9,7 +9,7 @@ export TLS_CREATION_DRY_RUN="false"
 
 export SS2_SUBSCRIPTION_ID="223aea1c-d7df-414a-8855-0130489ff98f"
 export TENX_SUBSCRIPTION_ID="placeholder_10x_subscription_id"
-export OPTIMUS_SUBSCRIPTION_ID="65dc209f-99e8-449c-89c9-c37ac9921648"
+export OPTIMUS_SUBSCRIPTION_ID="528cda80-3fe1-4a6c-bafc-2244a1895991"
 
 export GCLOUD_PROJECT="broad-dsde-mint-integration"
 export GOOGLE_PUBSUB_TOPIC="hca-notifications-${ENVIRONMENT}"
