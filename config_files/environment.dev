@@ -10,7 +10,7 @@ export TLS_CREATION_DRY_RUN="false"
 export SS2_SUBSCRIPTION_ID="placeholder_ss2_subscription_id"
 export TENX_SUBSCRIPTION_ID="placeholder_10x_subscription_id"
 export OPTIMUS_SUBSCRIPTION_ID="placeholder_optimus_subscription_id"
-export LIRA_DRY_RUN="true"
+export LIRA_DRY_RUN="false"
 
 export GCLOUD_PROJECT="broad-dsde-mint-dev"
 export GOOGLE_PUBSUB_TOPIC="hca-notifications-${ENVIRONMENT}"
