@@ -39,7 +39,7 @@ spec:
                   failureThreshold: 10
               resources:
                   requests:
-                      cpu: "0.25"
+                      cpu: "0.50"
                       memory: "1G"
             terminationGracePeriodSeconds: 0
             volumes:
