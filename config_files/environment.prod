@@ -9,7 +9,7 @@ export TLS_CREATION_DRY_RUN="false"
 
 export SS2_SUBSCRIPTION_ID="15fb378f-4af9-463c-9ba3-8aad16142995"
 export TENX_SUBSCRIPTION_ID="placeholder_10x_subscription_id"
-export OPTIMUS_SUBSCRIPTION_ID="5f15f31d-4566-4d8b-92e8-9437be305a11"
+export OPTIMUS_SUBSCRIPTION_ID="c6bf5d49-3e60-40d2-8a0c-d66831547899"
 
 export GCLOUD_PROJECT="hca-dcp-pipelines-prod"
 export GOOGLE_PUBSUB_TOPIC="hca-notifications-${ENVIRONMENT}"
