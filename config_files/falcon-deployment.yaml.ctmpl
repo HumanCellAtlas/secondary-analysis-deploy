@@ -40,7 +40,8 @@ spec:
                   - name: CAAS_KEY
                     value: /etc/falcon/caas_key.json
                   {{ end }}
-
+            nodeSelector:
+                state: active
             terminationGracePeriodSeconds: 0
             volumes:
                 - name: falcon-config

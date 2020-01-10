@@ -26,6 +26,7 @@ if [[ -z "${CERTBOT_DOMAIN}" ]]; then
             --manual-public-ip-logging-ok \
             --email mintteam@broadinstitute.org \
             --domains "${DOMAIN}" \
+            --server https://acme-v02.api.letsencrypt.org/directory \
             --dry-run
     else
         certbot certonly \
@@ -39,6 +40,7 @@ if [[ -z "${CERTBOT_DOMAIN}" ]]; then
             --agree-tos \
             --manual-public-ip-logging-ok \
             --email mintteam@broadinstitute.org \
+            --server https://acme-v02.api.letsencrypt.org/directory \
             --domains "${DOMAIN}"
     fi
 

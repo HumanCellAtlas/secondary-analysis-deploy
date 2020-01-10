@@ -41,6 +41,8 @@ spec:
                   requests:
                       cpu: "0.20"
                       memory: "1G"
+            nodeSelector:
+                state: active
             terminationGracePeriodSeconds: 0
             volumes:
                 - name: lira-config

@@ -18,6 +18,7 @@
     "use_caas": {{ env "USE_CAAS" | parseBool }},
     "submit_and_hold": {{ env "SUBMIT_AND_HOLD" | parseBool }},
     "test_mode": {{ env "TEST_MODE" | parseBool }},
+    "dry_run": {{ or (env "LIRA_DRY_RUN") "false" | parseBool }},
     "env": "{{ $ENVIRONMENT }}",
     "google_project": "{{ env "GCLOUD_PROJECT" }}",
     "google_pubsub_topic": "{{ env "GOOGLE_PUBSUB_TOPIC" }}",
