@@ -6,7 +6,7 @@
 
 source "${CONFIG_DIR}/environment.${ENVIRONMENT}"
 
-export ADAPTER_PIPELINES_VERSION="v1.3.0"
+export ADAPTER_PIPELINES_VERSION="v1.3.1"
 
 export LIRA_VERSION="v0.23.1"
 
