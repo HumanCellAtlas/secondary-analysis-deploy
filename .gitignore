@@ -6,3 +6,8 @@
 *.yaml
 config_files/config.sh
 *config.json
+
+#JetBrains
+.idea
+.DS_Store
+scripts/.DS_Store
