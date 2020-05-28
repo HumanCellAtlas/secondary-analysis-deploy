@@ -150,5 +150,4 @@ cat "${CONFIG_DIR}/lira-autoscaler.yaml"
 echo "Updating Lira autoscaler"
 kubectl apply -f "${CONFIG_DIR}/lira-autoscaler.yaml" \
               --record \
-              --validate=false \
               --namespace "${KUBERNETES_NAMESPACE}"
