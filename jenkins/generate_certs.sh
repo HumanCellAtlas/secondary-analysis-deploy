@@ -15,14 +15,13 @@ AWS_SECRET_ACCESS_KEY="$(docker run -i \
                                     vault read -field='aws_secret_key' secret/dsde/mint/${ENVIRONMENT}/lira/aws_cert_user)"
 
 echo "Making the temp directory for certs"
-mkdir certs
+mkdir ${WORK_DIR}/certs
 
 echo "Building the Certbot docker image"
 cd "${DEPLOY_DIR}"
 docker build -t certbot .
-cd ../..
 
-cd certs
+cd ${WORK_DIR}/certs
 
 echo "Executing the certbot script to create a cert"
 docker run \

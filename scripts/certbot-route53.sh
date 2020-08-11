@@ -42,6 +42,7 @@ if [[ -z "${CERTBOT_DOMAIN}" ]]; then
             --email mintteam@broadinstitute.org \
             --domains "${DOMAIN}" \
             --server https://acme-v02.api.letsencrypt.org/directory \
+            --dry-run \
             --force-renewal
     fi
 
