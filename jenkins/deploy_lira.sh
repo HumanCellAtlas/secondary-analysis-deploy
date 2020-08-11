@@ -186,14 +186,11 @@ kubectl apply -f ${CONFIG_DIR}/lira-deployment.yaml \
               --namespace "${KUBERNETES_NAMESPACE}"
 
 echo "Generating Lira autoscaler file"
-docker run -i --rm -e LIRA_CONFIG_SECRET_NAME="${LIRA_CONFIG_SECRET_NAME}" \
-                   -e LIRA_DEPLOYMENT_NAME="${LIRA_DEPLOYMENT_NAME}" \
-                   -e LIRA_NUMBER_OF_REPLICAS="${LIRA_NUMBER_OF_REPLICAS}" \
-                   -e LIRA_APPLICATION_NAME="${LIRA_APPLICATION_NAME}" \
-                   -e LIRA_CONTAINER_NAME="${LIRA_CONTAINER_NAME}" \
-                   -e LIRA_DOCKER_IMAGE="${LIRA_DOCKER_IMAGE}" \
-                   -e USE_CAAS="${USE_CAAS}" \
-                   -e SUBMIT_AND_HOLD="${SUBMIT_AND_HOLD}" \
+docker run -i --rm -e LIRA_AUTOSCALER_NAME="${LIRA_AUTOSCALER_NAME}" \
+                   -e LIRA_DEPLOYMENT_NAME= "${LIRA_DEPLOYMENT_NAME}" \
+                   -e LIRA_MIN_REPLICAS="${LIRA_MIN_REPLICAS}" \
+                   -e LIRA_MAX_REPLICAS="${LIRA_MAX_REPLICAS}" \
+                   -e LIRA_PERCENT_TARGET_CPU_USAGE="${LIRA_PERCENT_TARGET_CPU_USAGE}" \
                    -v "${VAULT_READ_TOKEN_PATH}":/root/.vault-token \
                    -v "${PWD}":/working \
                    --privileged \
@@ -203,7 +200,7 @@ docker run -i --rm -e LIRA_CONFIG_SECRET_NAME="${LIRA_CONFIG_SECRET_NAME}" \
 
 cat "${CONFIG_DIR}/lira-autoscaler.yaml"
 
-echo "Updating Lira autoscaler"
+echo "Deploying Lira autoscaler"
 kubectl apply -f "${CONFIG_DIR}/lira-autoscaler.yaml" \
               --record \
               --namespace "${KUBERNETES_NAMESPACE}"
