@@ -58,7 +58,7 @@ fi
 if [[ -f "certs/letsencrypt/archive/${DOMAIN}/privkey1.pem" ]];
 then
     PRIVKEY_VAULT_DIR="certs/letsencrypt/archive/${DOMAIN}/privkey1.pem"
-    echo "Writing privkey to vault at ${PRIVKEY_VAULT_DIR}"
+    echo "Writing privkey to vault at secret/dsde/mint/${ENVIRONMENT}/lira/privkey.pem"
     docker run -i \
                --rm \
                -v "${VAULT_WRITE_TOKEN_PATH}":/root/.vault-token \
@@ -72,7 +72,7 @@ fi
 if [[ -f "certs/letsencrypt/archive/${DOMAIN}/chain1.pem" ]];
 then
     CHAIN_VAULT_DIR="certs/letsencrypt/archive/${DOMAIN}/chain1.pem"
-    echo "Writing chain to vault at ${CHAIN_VAULT_DIR}"
+    echo "Writing chain to vault at secret/dsde/mint/${ENVIRONMENT}/lira/chain.pem"
     docker run -i \
                --rm \
                -v "${VAULT_WRITE_TOKEN_PATH}":/root/.vault-token \

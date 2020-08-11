@@ -40,8 +40,9 @@ if [[ -z "${CERTBOT_DOMAIN}" ]]; then
             --agree-tos \
             --manual-public-ip-logging-ok \
             --email mintteam@broadinstitute.org \
+            --domains "${DOMAIN}" \
             --server https://acme-v02.api.letsencrypt.org/directory \
-            --domains "${DOMAIN}"
+            --force-renewal
     fi
 
 else
