@@ -7,6 +7,7 @@
 # is a subset of bash not full bash. Using the redirect did not work
 
 MYSELF="$(cd "$(dirname "$0")" && pwd)/$(basename "$0")"
+RENEW_CERT="true"
 
 # Check that certbot domain exists. If not, then create letsencrypt directory and make the cert challenge
 if [[ -z "${CERTBOT_DOMAIN}" ]]; then
@@ -29,20 +30,37 @@ if [[ -z "${CERTBOT_DOMAIN}" ]]; then
             --server https://acme-v02.api.letsencrypt.org/directory \
             --dry-run
     else
-        certbot certonly \
-            --non-interactive \
-            --manual \
-            --manual-auth-hook "${MYSELF}" \
-            --preferred-challenge dns \
-            --config-dir "${PWD}/letsencrypt" \
-            --work-dir "${PWD}/letsencrypt" \
-            --logs-dir "${PWD}/letsencrypt" \
-            --agree-tos \
-            --manual-public-ip-logging-ok \
-            --email mintteam@broadinstitute.org \
-            --domains "${DOMAIN}" \
-            --server https://acme-v02.api.letsencrypt.org/directory \
-            --force-renewal
+        if [[ "${RENEW_CERT}" == "true" ]]; then
+          certbot renew \
+              --non-interactive \
+              --manual \
+              --manual-auth-hook "${MYSELF}" \
+              --preferred-challenge dns \
+              --config-dir "${PWD}/letsencrypt" \
+              --work-dir "${PWD}/letsencrypt" \
+              --logs-dir "${PWD}/letsencrypt" \
+              --agree-tos \
+              --manual-public-ip-logging-ok \
+              --email mintteam@broadinstitute.org \
+              --domains "${DOMAIN}" \
+              --server https://acme-v02.api.letsencrypt.org/directory \
+              --force-renewal \
+              --dry-run
+        else
+          certbot certonly \
+              --non-interactive \
+              --manual \
+              --manual-auth-hook "${MYSELF}" \
+              --preferred-challenge dns \
+              --config-dir "${PWD}/letsencrypt" \
+              --work-dir "${PWD}/letsencrypt" \
+              --logs-dir "${PWD}/letsencrypt" \
+              --agree-tos \
+              --manual-public-ip-logging-ok \
+              --email mintteam@broadinstitute.org \
+              --domains "${DOMAIN}" \
+              --server https://acme-v02.api.letsencrypt.org/directory
+        fi
     fi
 
 else
