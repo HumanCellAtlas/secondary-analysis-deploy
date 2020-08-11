@@ -80,8 +80,6 @@ kubectl apply -f ${CONFIG_DIR}/lira-ingress.yaml \
               --record \
               --namespace="${KUBERNETES_NAMESPACE}"
 
-
-
 # LIRA APPLICATION DEPLOYMENT
 
 echo "ENVIRONMENT=${ENVIRONMENT}"
