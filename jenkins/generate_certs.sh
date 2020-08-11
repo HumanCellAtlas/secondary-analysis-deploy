@@ -40,8 +40,6 @@ cd ..
 
 sudo chown -R jenkins certs
 
-# fullchain1.pem
-
 function write_to_vault(){
   file_name=$1
   live_or_archive=$2
@@ -74,6 +72,8 @@ function write_certs_to_vault(){
       echo "${f^} file doesn't exist. Skipping..."
     fi
   done
+
+write_certs_to_vault
 
 
 #  if [[ -f "certs/letsencrypt/archive/${DOMAIN}/fullchain1.pem" ]];
