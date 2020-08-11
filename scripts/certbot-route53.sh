@@ -32,8 +32,7 @@ if [[ -z "${CERTBOT_DOMAIN}" ]]; then
     else
         if [[ "${RENEW_CERT}" == "true" ]]; then
           certbot renew \
-              --force-renewal \
-              --dry-run
+              --force-renewal
         else
           certbot certonly \
               --non-interactive \
