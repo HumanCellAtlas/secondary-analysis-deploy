@@ -32,18 +32,6 @@ if [[ -z "${CERTBOT_DOMAIN}" ]]; then
     else
         if [[ "${RENEW_CERT}" == "true" ]]; then
           certbot renew \
-              --non-interactive \
-              --manual \
-              --manual-auth-hook "${MYSELF}" \
-              --preferred-challenge dns \
-              --config-dir "${PWD}/letsencrypt" \
-              --work-dir "${PWD}/letsencrypt" \
-              --logs-dir "${PWD}/letsencrypt" \
-              --agree-tos \
-              --manual-public-ip-logging-ok \
-              --email mintteam@broadinstitute.org \
-              --domains "${DOMAIN}" \
-              --server https://acme-v02.api.letsencrypt.org/directory \
               --force-renewal \
               --dry-run
         else
