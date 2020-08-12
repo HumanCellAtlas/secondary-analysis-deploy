@@ -40,7 +40,7 @@ cd ${WORK_DIR}
 
 sudo chown -R jenkins certs
 
-write_to_vault(){
+function write_to_vault{
   file_name=$1
   live_or_archive=$2
 
@@ -59,7 +59,7 @@ write_to_vault(){
              vault write "secret/dsde/mint/${ENVIRONMENT}/lira/${vault_file_name}" value=@"${FILE_TO_WRITE}"
 }
 
-write_certs_to_vault(){
+function write_certs_to_vault {
   echo "writing certs to vault"
 
   for f in "fullchain1.pem" "privkey1.pem" "chain1.pem" "cert1.pem"
