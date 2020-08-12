@@ -36,7 +36,7 @@ docker run \
     bash -c \
         "bash /certs/certbot-route53.sh"
 
-cd ..
+cd ${WORK_DIR}
 
 sudo chown -R jenkins certs
 
@@ -60,13 +60,17 @@ function write_to_vault(){
 }
 
 function write_certs_to_vault(){
+  echo "writing certs to vault"
+
   for f in "fullchain1.pem" "privkey1.pem" "chain1.pem" "cert1.pem"
   do
     if [[ -f "certs/letsencrypt/archive/${DOMAIN}/${f}" ]];
     then
+      echo "${f} written in archive path"
       write_to_vault "${f}" "archive"
     elif [[ -f "certs/letsencrypt/live/${DOMAIN}/$(printf '%s\n' "${f//[[:digit:]]/}")"  ]]
     then
+      echo "${f} written in live path"
       write_to_vault "${f}" "live"
     else
       echo "${f^} file doesn't exist. Skipping..."
@@ -199,4 +203,4 @@ write_certs_to_vault
 #fi
 
 echo "Removing local copies of certs"
-rm -rf certs
+#rm -rf certs
