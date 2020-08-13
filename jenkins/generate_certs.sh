@@ -40,7 +40,7 @@ cd ${WORK_DIR}
 
 sudo chown -R jenkins certs
 
-function write_to_vault{
+function write_to_vault {
   file_name=$1
   live_or_archive=$2
 
