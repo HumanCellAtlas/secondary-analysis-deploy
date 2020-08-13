@@ -64,20 +64,24 @@ function write_certs_to_vault {
 
   for f in "fullchain1.pem" "privkey1.pem" "chain1.pem" "cert1.pem"
   do
-    if [[ -f "certs/letsencrypt/archive/${DOMAIN}/${f}" ]];
+    if [[ -f "certs/letsencrypt/live/${DOMAIN}/$(printf '%s\n' "${f//[[:digit:]]/}")"  ]]
     then
-      echo "${f} written in archive path"
-      write_to_vault "${f}" "archive"
-    elif [[ -f "certs/letsencrypt/live/${DOMAIN}/$(printf '%s\n' "${f//[[:digit:]]/}")"  ]]
-    then
-      echo "${f} written in live path"
+      echo "${f} from new cert"
       write_to_vault "${f}" "live"
+    elif [[ -f "certs/letsencrypt/archive/${DOMAIN}/${f}" ]];
+    then
+      echo "${f} from new cert"
+      write_to_vault "${f}" "archive"
     else
       echo "${f^} file doesn't exist. Skipping..."
     fi
   done
 
+echo "--------------------------------------------------"
+echo "entering write to vault function"
 write_certs_to_vault
+echo "done with write to vault function"
+echo "--------------------------------------------------"
 
 
 #  if [[ -f "certs/letsencrypt/archive/${DOMAIN}/fullchain1.pem" ]];
