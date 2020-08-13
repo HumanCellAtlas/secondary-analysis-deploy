@@ -66,11 +66,11 @@ function write_certs_to_vault {
   do
     if [[ -f "certs/letsencrypt/live/${DOMAIN}/$(printf '%s\n' "${f//[[:digit:]]/}")"  ]]
     then
-      echo "${f} from new cert"
+      echo "${f} from live path"
       write_to_vault "${f}" "live"
     elif [[ -f "certs/letsencrypt/archive/${DOMAIN}/${f}" ]];
     then
-      echo "${f} from new cert"
+      echo "${f} from archive path"
       write_to_vault "${f}" "archive"
     else
       echo "${f^} file doesn't exist. Skipping..."
@@ -130,7 +130,7 @@ echo "--------------------------------------------------"
 #  else
 #      echo "Cert file doesn't exist. Skipping..."
 #  fi
-}
+#}
 
 #if [[ -f "certs/letsencrypt/archive/${DOMAIN}/fullchain1.pem" ]];
 #then
