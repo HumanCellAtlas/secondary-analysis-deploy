@@ -80,9 +80,7 @@ function write_certs_to_vault {
 
 
 echo "--------------------------------------------------"
-echo "entering write to vault function"
 write_certs_to_vault
-echo "done with write to vault function"
 echo "--------------------------------------------------"
 
 
