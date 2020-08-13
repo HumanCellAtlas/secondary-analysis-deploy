@@ -15,20 +15,20 @@ AWS_SECRET_ACCESS_KEY="$(docker run -i \
                                     vault read -field='aws_secret_key' secret/dsde/mint/${ENVIRONMENT}/lira/aws_cert_user)"
 
 echo "Making the temp directory for certs"
-mkdir ${WORK_DIR}/certs
+mkdir "${WORK_DIR}"/certs
 
 echo "Building the Certbot docker image"
-cd "${DEPLOY_DIR}"
+cd "${DEPLOY_DIR}" || exit 1
 docker build -t certbot .
 
-cd ${WORK_DIR}/certs
+cd "${WORK_DIR}"/certs || exit 1
 
 echo "Executing the certbot script to create a cert"
 docker run \
     -e AWS_ACCESS_KEY_ID="${AWS_ACCESS_KEY_ID}" \
     -e AWS_SECRET_ACCESS_KEY="${AWS_SECRET_ACCESS_KEY}" \
     -e DOMAIN="${DOMAIN}" \
-    -v $(pwd):/certs \
+    -v "$(pwd)":/certs \
     -v "${SCRIPTS_DIR}/certbot-route53.sh":/certs/certbot-route53.sh \
     -w /certs \
     --privileged \
@@ -36,7 +36,7 @@ docker run \
     bash -c \
         "bash /certs/certbot-route53.sh"
 
-cd ${WORK_DIR}
+cd "${WORK_DIR}" || exit 1
 
 sudo chown -R jenkins certs
 
@@ -64,7 +64,7 @@ function write_certs_to_vault {
 
   for file_name in "fullchain1.pem" "privkey1.pem" "chain1.pem" "cert1.pem"
   do
-    if [[ -f "certs/letsencrypt/live/${DOMAIN}/$(printf '%s\n' "${f//[[:digit:]]/}")"  ]]
+    if [[ -f "certs/letsencrypt/live/${DOMAIN}/$(printf '%s\n' "${file_name//[[:digit:]]/}")"  ]]
     then
       file_name=$(printf '%s\n' "${file_name//[[:digit:]]/}")
       echo "${file_name} from live path"
