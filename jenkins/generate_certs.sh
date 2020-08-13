@@ -76,6 +76,8 @@ function write_certs_to_vault {
       echo "${f^} file doesn't exist. Skipping..."
     fi
   done
+}
+
 
 echo "--------------------------------------------------"
 echo "entering write to vault function"
