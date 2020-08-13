@@ -50,7 +50,7 @@ function write_to_vault {
   FILE_TO_WRITE="certs/letsencrypt/${live_or_archive}/${DOMAIN}/${file_name}"
   VAULT_PATH="certs/letsencrypt/${live_or_archive}/${DOMAIN}/${vault_file_name}"
 
-  echo "Writing ${file_name} to vault at path ${VAULT_PATH}"
+  echo "Writing cert with ${file_name} to vault at path ${VAULT_PATH}"
   docker run -i \
              --rm \
              -v "${VAULT_WRITE_TOKEN_PATH}":/root/.vault-token \
@@ -62,18 +62,19 @@ function write_to_vault {
 function write_certs_to_vault {
   echo "writing certs to vault"
 
-  for f in "fullchain1.pem" "privkey1.pem" "chain1.pem" "cert1.pem"
+  for file_name in "fullchain1.pem" "privkey1.pem" "chain1.pem" "cert1.pem"
   do
     if [[ -f "certs/letsencrypt/live/${DOMAIN}/$(printf '%s\n' "${f//[[:digit:]]/}")"  ]]
     then
-      echo "${f} from live path"
-      write_to_vault "${f}" "live"
-    elif [[ -f "certs/letsencrypt/archive/${DOMAIN}/${f}" ]];
+      file_name=$(printf '%s\n' "${file_name//[[:digit:]]/}")
+      echo "${file_name} from live path"
+      write_to_vault "${file_name}" "live"
+    elif [[ -f "certs/letsencrypt/archive/${DOMAIN}/${file_name}" ]];
     then
-      echo "${f} from archive path"
-      write_to_vault "${f}" "archive"
+      echo "${file_name} from archive path"
+      write_to_vault "${file_name}" "archive"
     else
-      echo "${f^} file doesn't exist. Skipping..."
+      echo "${file_name^} file doesn't exist. Skipping..."
     fi
   done
 }
