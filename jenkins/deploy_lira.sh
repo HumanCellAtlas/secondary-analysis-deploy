@@ -62,7 +62,8 @@ kubectl apply -f ${CONFIG_DIR}/lira-service.yaml \
 
 if [[ ${GENERATE_CERTS} == "true" ]];
 then
-    sh ${DEPLOY_DIR}/generate_certs.sh
+    echo "Generating TLS cert"
+    sh "${DEPLOY_DIR}"/generate_certs.sh
 fi
 
 echo "Rendering TLS cert"
@@ -89,6 +90,11 @@ kubectl create secret tls \
                 --cert="${CONFIG_DIR}/${TLS_FULL_CHAIN_DIR}" \
                 --key="${CONFIG_DIR}/${TLS_PRIVATE_KEY_DIR}" \
                 --namespace="${KUBERNETES_NAMESPACE}"
+
+echo "LIRA_INGRESS_NAME=${LIRA_INGRESS_NAME}"
+echo "LIRA_GLOBAL_IP_NAME=${LIRA_GLOBAL_IP_NAME}"
+echo "TLS_SECRET_NAME=${TLS_SECRET_NAME}"
+echo "LIRA_SERVICE_NAME=${LIRA_SERVICE_NAME}"
 
 echo "Generating ingress file"
 docker run -i --rm -e TLS_SECRET_NAME="${TLS_SECRET_NAME}" \
@@ -179,3 +185,23 @@ echo "Deploying Lira"
 kubectl apply -f ${CONFIG_DIR}/lira-deployment.yaml \
               --record \
               --namespace "${KUBERNETES_NAMESPACE}"
+
+#echo "Generating Lira autoscaler file"
+#docker run -i --rm -e LIRA_AUTOSCALER_NAME="${LIRA_AUTOSCALER_NAME}" \
+#                   -e LIRA_DEPLOYMENT_NAME= "${LIRA_DEPLOYMENT_NAME}" \
+#                   -e LIRA_MIN_REPLICAS="${LIRA_MIN_REPLICAS}" \
+#                   -e LIRA_MAX_REPLICAS="${LIRA_MAX_REPLICAS}" \
+#                   -e LIRA_PERCENT_TARGET_CPU_USAGE="${LIRA_PERCENT_TARGET_CPU_USAGE}" \
+#                   -v "${VAULT_READ_TOKEN_PATH}":/root/.vault-token \
+#                   -v "${PWD}":/working \
+#                   --privileged \
+#                   broadinstitute/dsde-toolbox:ra_rendering \
+#                   /usr/local/bin/render-ctmpls.sh \
+#                    -k "${DOCKER_CONFIG_DIR}/lira-autoscaler.yaml.ctmpl"
+#
+#cat "${CONFIG_DIR}/lira-autoscaler.yaml"
+#
+#echo "Deploying Lira autoscaler"
+#kubectl apply -f "${CONFIG_DIR}/lira-autoscaler.yaml" \
+#              --record \
+#              --namespace "${KUBERNETES_NAMESPACE}"
