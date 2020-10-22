@@ -1,21 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-    name: {{ env "LIRA_DEPLOYMENT_NAME" }}
+    name: lira
+    labels:
+        app.kubernetes.io/managed-by: mint
+        app.kubernetes.io/name: lira
 spec:
     selector:
         matchLabels:
-          app: {{ env "LIRA_APPLICATION_NAME" }}
+          component: lira
 
     template:
         metadata:
             labels:
-                app: {{ env "LIRA_APPLICATION_NAME" }}
-                component: {{ env "LIRA_APPLICATION_NAME" }}
+                app: lira
+                component: lira
 
         spec:
             containers:
-            - name: {{ env "LIRA_CONTAINER_NAME" }}
+            - name: lira
               image: {{env "LIRA_DOCKER_IMAGE"}}
               imagePullPolicy: Always
               ports:
@@ -33,6 +36,7 @@ spec:
                   - name: caas_key
                     value: /etc/secondary-analysis/caas_key.json
                   {{ end }}
+
               readinessProbe:
                   httpGet:
                       path: /health
@@ -42,13 +46,17 @@ spec:
                   timeoutSeconds: 5
                   successThreshold: 1
                   failureThreshold: 10
+
               resources:
                   requests:
                       cpu: "0.20"
                       memory: "1G"
+
             nodeSelector:
                 state: active
+
             terminationGracePeriodSeconds: 0
+
             volumes:
                 - name: lira-config
                   secret:
