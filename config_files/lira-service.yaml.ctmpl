@@ -6,7 +6,7 @@ spec:
     type: NodePort
     selector:
         app: {{ env "LIRA_APPLICATION_NAME" }}
-        component: {{ env "LIRA_APPLICATION_NAME" }}
+
     ports:
         - name: http
           port: 8080
