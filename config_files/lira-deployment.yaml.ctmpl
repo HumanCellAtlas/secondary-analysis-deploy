@@ -6,7 +6,6 @@ spec:
     selector:
         matchLabels:
           app: {{ env "LIRA_APPLICATION_NAME" }}
-          component: {{ env "LIRA_APPLICATION_NAME" }}
 
     template:
         metadata:

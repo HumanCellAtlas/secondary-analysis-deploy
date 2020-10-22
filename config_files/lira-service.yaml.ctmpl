@@ -3,9 +3,6 @@ kind: Service
 metadata:
     name: {{ env "LIRA_SERVICE_NAME" }}
 spec:
-    selector:
-        app: {{ env "LIRA_APPLICATION_NAME" }}
-        component: {{ env "LIRA_APPLICATION_NAME" }}
     type: NodePort
     selector:
         app: {{ env "LIRA_APPLICATION_NAME" }}
