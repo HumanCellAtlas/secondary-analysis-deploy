@@ -13,7 +13,6 @@ spec:
     template:
         metadata:
             labels:
-                app: lira
                 component: lira
 
         spec:
