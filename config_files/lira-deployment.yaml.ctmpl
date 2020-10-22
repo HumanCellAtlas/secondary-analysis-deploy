@@ -5,12 +5,14 @@ metadata:
 spec:
     selector:
         matchLabels:
+          app: {{ env "LIRA_APPLICATION_NAME" }}
           component: {{ env "LIRA_APPLICATION_NAME" }}
 
     template:
         metadata:
             labels:
                 app: {{ env "LIRA_APPLICATION_NAME" }}
+                component: {{ env "LIRA_APPLICATION_NAME" }}
 
         spec:
             containers:
