@@ -6,6 +6,7 @@
 *.yaml
 config_files/config.sh
 *config.json
+test/*
 
 #JetBrains
 .idea
