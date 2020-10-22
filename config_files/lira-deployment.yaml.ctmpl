@@ -3,6 +3,10 @@ kind: Deployment
 metadata:
     name: {{ env "LIRA_DEPLOYMENT_NAME" }}
 spec:
+    selector:
+        matchLabels:
+          component: {{ env "LIRA_APPLICATION_NAME" }}
+
     template:
         metadata:
             labels:
