@@ -5,6 +5,9 @@ metadata:
   annotations:
     kubernetes.io/ingress.global-static-ip-name: {{ env "LIRA_GLOBAL_IP_NAME" }}
     kubernetes.io/ingress.allow-http: "false"
+  labels:
+      app.kubernetes.io/managed-by: mint
+      app.kubernetes.io/name: lira
 
 spec:
   tls:
