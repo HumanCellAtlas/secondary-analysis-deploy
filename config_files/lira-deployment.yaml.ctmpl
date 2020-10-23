@@ -9,12 +9,10 @@ spec:
     selector:
         matchLabels:
           component: lira
-
     template:
         metadata:
             labels:
                 component: lira
-
         spec:
             containers:
             - name: lira
@@ -22,12 +20,10 @@ spec:
               imagePullPolicy: Always
               ports:
                   - containerPort: 8080
-
               volumeMounts:
                   - name: lira-config
                     mountPath: /etc/secondary-analysis
                     readOnly: true
-
               env:
                   - name: lira_config
                     value: /etc/secondary-analysis/config.json
@@ -35,7 +31,6 @@ spec:
                   - name: caas_key
                     value: /etc/secondary-analysis/caas_key.json
                   {{ end }}
-
               readinessProbe:
                   httpGet:
                       path: /health
@@ -45,17 +40,13 @@ spec:
                   timeoutSeconds: 5
                   successThreshold: 1
                   failureThreshold: 10
-
               resources:
                   requests:
                       cpu: "0.20"
                       memory: "1G"
-
             nodeSelector:
                 state: active
-
             terminationGracePeriodSeconds: 0
-
             volumes:
                 - name: lira-config
                   secret:
