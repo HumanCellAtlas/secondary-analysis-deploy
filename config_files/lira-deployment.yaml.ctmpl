@@ -6,12 +6,20 @@ metadata:
         app.kubernetes.io/managed-by: mint
         app.kubernetes.io/name: lira
 spec:
+    replicas: 1
+    revisionHistoryLimit: 1
     selector:
         matchLabels:
           component: lira
+    strategy:
+        type: RollingUpdate
+        rollingUpdate:
+            maxSurge: 3
+            maxUnavailable: 1
     template:
         metadata:
             labels:
+                app: lira
                 component: lira
         spec:
             containers:
@@ -19,7 +27,9 @@ spec:
               image: {{env "LIRA_DOCKER_IMAGE"}}
               imagePullPolicy: Always
               ports:
-                  - containerPort: 8080
+                  - name: http
+                    containerPort: 8080
+                    protocol: TCP
               volumeMounts:
                   - name: lira-config
                     mountPath: /etc/secondary-analysis
